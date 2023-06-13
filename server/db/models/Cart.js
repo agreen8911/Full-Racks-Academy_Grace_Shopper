@@ -22,3 +22,7 @@ const Cart = db.define('cart', {
 })
 
 module.exports = Cart
+
+
+
+//I AM MAKING THIS COMMENT FOR TEST 
