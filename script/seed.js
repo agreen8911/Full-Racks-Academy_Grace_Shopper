@@ -77,6 +77,106 @@ async function seed() {
       price: 307.08,
       description: "Used for multiple exercises",
     }),
+    Product.create({
+      productName: "legPress",
+      price: 800.03,
+      description: "Used for building Legs",
+    }),
+    Product.create({
+      productName: "pecDeck",
+      price: 129.99,
+      description: "Used for building chest",
+    }),
+    Product.create({
+      productName: "sled",
+      price: 200.99,
+      description: "Used for lower body",
+    }),
+    Product.create({
+      productName: "platform",
+      price: 287.99,
+      description: "Used for deadlifts",
+    }),
+    Product.create({
+      productName: "pullUpBar",
+      price: 88.99,
+      description: "Used for building back",
+    }),
+    Product.create({
+      productName: "smithMachine",
+      price: 307.08,
+      description: "Used for multiple exercises",
+    }),
+    Product.create({
+      productName: "legExtension",
+      price: 129.99,
+      description: "Used for building legs",
+    }),
+    Product.create({
+      productName: "legCurl",
+      price: 189.99,
+      description: "Used for building hamstrings",
+    }),
+    Product.create({
+      productName: "calfPress",
+      price: 500.99,
+      description: "Used for building calves",
+    }),
+    Product.create({
+      productName: "seatedRow",
+      price: 500.99,
+      description: "Used for building thick back",
+    }),
+    Product.create({
+      productName: "seatedDeclinePress",
+      price: 500.99,
+      description: "Used for building chest",
+    }),
+    Product.create({
+      productName: "seatedInclinePress",
+      price: 500.99,
+      description: "Used for building chest",
+    }),
+    Product.create({
+      productName: "backExtension",
+      price: 100.99,
+      description: "Used for building lower back",
+    }),
+    Product.create({
+      productName: "hackSquat",
+      price: 371.99,
+      description: "Used for building legs",
+    }),
+    Product.create({
+      productName: "shakeWeight",
+      price: 2.99,
+      description: "Used for building some random muscle",
+    }),
+    Product.create({
+      productName: "stairMaster",
+      price: 505.99,
+      description: "Used for great cardio",
+    }),
+    Product.create({
+      productName: "stationaryBike",
+      price: 83.99,
+      description: "Used for cardio",
+    }),
+    Product.create({
+      productName: "treadmill",
+      price: 83.99,
+      description: "Used for cardio",
+    }),
+    Product.create({
+      productName: "preacherCurlMachine",
+      price: 289.99,
+      description: "Used for building Biceps",
+    }),
+    Product.create({
+      productName: "tricepExtensionMachine",
+      price: 149.99,
+      description: "Used for building triceps",
+    }),
   ]);
 
   console.log(`seeded ${users.length} users`);
