@@ -21,6 +21,8 @@ async function seed() {
       firstName: "Cody",
       lastName: "Jones",
       email: "cjones@hotmail.com",
+      cart: [],
+
     }),
     User.create({
       username: "murphy",
@@ -28,6 +30,7 @@ async function seed() {
       firstName: "Murphy",
       lastName: "Coolname",
       email: "cjones@hotmail.com",
+      cart: []
     }),
     User.create({
       username: "coolguy999",
@@ -35,6 +38,7 @@ async function seed() {
       firstName: "Cool",
       lastName: "Guy",
       email: "coolguy@hotmail.com",
+      cart: []
     }),
     User.create({
       username: "JD123",
@@ -42,6 +46,7 @@ async function seed() {
       firstName: "Jon",
       lastName: "Does",
       email: "jdoe@hotmail.com",
+      cart: []
     }),
   ]);
 
@@ -50,6 +55,7 @@ async function seed() {
       productName: "Bench",
       price: 199.99,
       description: "Used for building the chest",
+      userId: 1
     }),
     Product.create({
       productName: "Dumbbells",
