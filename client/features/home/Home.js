@@ -18,9 +18,6 @@ const Home = (props) => {
         <h3>Welcome, {username}</h3>
       </div>
       <div className='HPequipmentTypes-section'>
-        <div id='HPallProducts'> 
-          <Link to="/allProducts"><h1>View All Products</h1></Link>
-        </div>
         <div id='HPstrength-products'> 
           <h1>STRENGTH EQUIPMENT</h1>
         </div>
@@ -29,6 +26,9 @@ const Home = (props) => {
         </div>
         <div id='HPrecovery-products'> 
           <h1>RECOVERY EQUIPMENT</h1>
+        </div>
+        <div id='HPallProducts'> 
+          <Link to="/allProducts"><h1>View All Products</h1></Link>
         </div>
       </div>
 
