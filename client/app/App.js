@@ -6,11 +6,11 @@ import Footer from '../features/footer/Footer'
 
 const App = () => {
   return (
-    <>
+     <>
       <div>
         <Navbar />
-        {/* <AppRoutes /> */}
-        
+         <AppRoutes /> 
+
       </div>
       <div>
         <Footer />
