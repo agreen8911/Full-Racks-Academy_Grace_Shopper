@@ -24,7 +24,7 @@ const Navbar = () => {
               Logout
             </button>
             <Link to="/cart">Cart icon</Link>
-            <Link to="/products">All Products</Link>
+            <Link to="/allProducts">All Products</Link>
             {/* check to make sure it is /allproducts vs /products */}
           </div>
         ) : (
@@ -32,7 +32,7 @@ const Navbar = () => {
             <div className="NBlinksLeft">
               <Link to ="/home">Home</Link>
               {/* The navbar will show these links before you log in */}
-              <Link to="/products">All Products</Link>
+              <Link to="/allProducts">All Products</Link>
             </div>
             <div className="NBlinksRight">
               <Link to="/login">Login</Link>
