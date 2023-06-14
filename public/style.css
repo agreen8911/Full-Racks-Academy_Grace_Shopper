@@ -1,5 +1,6 @@
 body {
   font-family: sans-serif;
+
 }
 
 a {
@@ -18,4 +19,29 @@ nav a {
 form div {
   margin: 1em;
   display: inline-block;
+}
+/* Navbar Styling */
+
+.NBlinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NBheader {
+  text-align: center;
+}
+
+/* Footer Styling */
+
+.FTRcontainer {
+  position:absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+.FTRlist  {
+  list-style-type: none;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
 }
