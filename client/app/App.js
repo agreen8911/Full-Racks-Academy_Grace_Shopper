@@ -10,14 +10,12 @@ const App = () => {
 
 
      <>
-      <div>
+      <div className="bodyContainer">
         <Navbar />
          <AppRoutes /> 
+         <Footer />
+      </div>
 
-      </div>
-      <div>
-        <Footer />
-      </div>
     </>
 
   );
