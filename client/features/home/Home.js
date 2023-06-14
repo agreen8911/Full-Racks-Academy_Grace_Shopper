@@ -19,13 +19,13 @@ const Home = (props) => {
       </div>
       <div className='HPequipmentTypes-section'>
         <div id='HPstrength-products'> 
-          <h1>STRENGTH EQUIPMENT</h1>
+          <Link to="/strengthequipment"><h1>STRENGTH EQUIPMENT</h1></Link>
         </div>
         <div id='HPcardio-products'> 
-          <h1>CARDIO EQUIPMENT</h1>
+          <Link to="/cardioequipment"><h1>CARDIO EQUIPMENT</h1></Link>
         </div>
         <div id='HPrecovery-products'> 
-          <h1>RECOVERY EQUIPMENT</h1>
+          <Link to="/recoveryequipment"><h1>RECOVERY EQUIPMENT</h1></Link>
         </div>
         <div id='HPallProducts'> 
           <Link to="/allProducts"><h1>View All Products</h1></Link>

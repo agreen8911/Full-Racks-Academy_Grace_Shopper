@@ -4,6 +4,9 @@ import { Route, Routes } from 'react-router-dom';
 import AuthForm from '../features/auth/AuthForm';
 import Home from '../features/home/Home';
 import { me } from './store';
+import AllStrength from '../features/strengthEquipment/AllStrength';
+import AllCardio from '../features/cardioEquipment/AllCardio';
+import AllRecovery from '../features/recoveryEquipment/AllRecovery';
 
 /**
  * COMPONENT
@@ -38,6 +41,13 @@ const AppRoutes = () => {
             path="/signup"
             element={<AuthForm name="signup" displayName="Sign Up" />}
           />
+         
+         <Route path="/strengthequipment" element={<AllStrength/>}/>
+         <Route path="/cardioequipment" element={<AllCardio/>}/>
+         <Route path="/recoveryequipment" element={<AllRecovery/>}/>
+         <Route path="/home" element={<Home/>}/>
+     
+
         </Routes>
       )}
     </div>
