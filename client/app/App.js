@@ -7,14 +7,12 @@ import Footer from '../features/footer/Footer'
 const App = () => {
   return (
      <>
-      <div>
+      <div className="bodyContainer">
         <Navbar />
          <AppRoutes /> 
+         <Footer />
+      </div>
 
-      </div>
-      <div>
-        <Footer />
-      </div>
     </>
   );
 };

@@ -1,6 +1,12 @@
 body {
   font-family: sans-serif;
 
+
+}
+.bodyContainer {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 a {
@@ -34,9 +40,10 @@ form div {
 /* Footer Styling */
 
 .FTRcontainer {
-  position:absolute;
+  /* position:absolute;
   bottom: 0;
-  width: 100vw;
+  width: 100vw; */
+  margin-top: auto;
 }
 
 .FTRlist  {
