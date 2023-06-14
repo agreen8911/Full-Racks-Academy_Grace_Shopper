@@ -6,9 +6,11 @@
 
 body {
   font-family: sans-serif;
+
   margin: 0;
   padding: 0;
   width: 100%;
+
 }
 
 a {
@@ -28,6 +30,7 @@ form div {
   margin: 1em;
   display: inline-block;
 }
+
 
 .HPuser-container {
   border: solid black 1px;
@@ -57,5 +60,32 @@ form div {
   rbga (0, 0, 0, 0.15) 0 12px 3px,
   rbga (0, 0, 0, 0.19) 0 -3px 5px;
   margin: 2% 0 3% 0;
+}
+
+
+/* Navbar Styling */
+
+.NBlinks {
+  display: flex;
+  justify-content: space-between;
+}
+
+.NBheader {
+  text-align: center;
+}
+
+/* Footer Styling */
+
+.FTRcontainer {
+  position:absolute;
+  bottom: 0;
+  width: 100vw;
+}
+
+.FTRlist  {
+  list-style-type: none;
+  display: flex;
+  /* flex-direction: row; */
+  justify-content: space-around;
 }
 
