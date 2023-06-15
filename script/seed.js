@@ -55,127 +55,164 @@ async function seed() {
       productName: "Bench",
       price: 19999,
       description: "Used for building the chest",
-      userId: 1
+      userId: 1,
+      productType: "Strength"
     }),
     Product.create({
       productName: "Dumbbells",
       price: 50001,
       description: "Used for building the pipes",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "latPullDown",
+      productName: "Lat PullDown",
       price: 30708,
       description: "Used for building the cobra back",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "Eliptical",
+      productName: "Elliptical",
       price: 30708,
       description: "Used for cardio",
+      productType: "Cardio"
     }),
     Product.create({
       productName: "TRX",
       price: 30708,
       description: "Used for multiple exercises",
+      productType: "Recovery"
     }),
     Product.create({
-      productName: "legPress",
+      productName: "Leg Press",
       price: 80003,
       description: "Used for building Legs",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "pecDeck",
+      productName: "Chest Fly",
       price: 12999,
       description: "Used for building chest",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "sled",
+      productName: "Sled",
       price: 20099,
       description: "Used for lower body",
+      productType: "Cardio"
     }),
     Product.create({
-      productName: "platform",
+      productName: "Lifting Platform",
       price: 28799,
       description: "Used for deadlifts",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "pullUpBar",
+      productName: "Pull-Up Bar",
       price: 8899,
       description: "Used for building back",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "smithMachine",
+      productName: "Smith Machine",
       price: 30708,
       description: "Used for multiple exercises",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "legExtension",
+      productName: "Leg Extension",
       price: 12999,
       description: "Used for building legs",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "legCurl",
+      productName: "Leg Curl",
       price: 18999,
       description: "Used for building hamstrings",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "calfPress",
+      productName: "Calf Press",
       price: 50099,
       description: "Used for building calves",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "seatedRow",
+      productName: "Seated Row",
       price: 50099,
       description: "Used for building thick back",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "seatedDeclinePress",
+      productName: "Seated Decline Press",
       price: 50099,
       description: "Used for building chest",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "seatedInclinePress",
+      productName: "Seated Incline Press",
       price: 50099,
       description: "Used for building chest",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "backExtension",
+      productName: "Back Extension",
       price: 10099,
       description: "Used for building lower back",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "hackSquat",
+      productName: "Hack Squat",
       price: 37199,
       description: "Used for building legs",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "shakeWeight",
+      productName: "Shake-Weight",
       price: 299,
       description: "Used for building some random muscle",
+      productType: "Cardio"
     }),
     Product.create({
-      productName: "stairMaster",
+      productName: "Stair Master",
       price: 50599,
       description: "Used for great cardio",
+      productType: "Cardio"
     }),
     Product.create({
-      productName: "stationaryBike",
+      productName: "Stationary Bike",
       price: 8399,
       description: "Used for cardio",
+      productType: "Cardio"
     }),
     Product.create({
-      productName: "treadmill",
+      productName: "Treadmill",
       price: 8399,
       description: "Used for cardio",
+      productType: "Cardio"
     }),
     Product.create({
-      productName: "preacherCurlMachine",
+      productName: "Preacher Curl Machine",
       price: 28999,
       description: "Used for building Biceps",
+      productType: "Strength"
     }),
     Product.create({
-      productName: "tricepExtensionMachine",
+      productName: "Tricep Extension Machine",
       price: 14999,
       description: "Used for building triceps",
+      productType: "Strength"
+    }),
+    Product.create({
+      productName: "Foam Roller",
+      price: 20000,
+      description: "Used for rolling out those knots",
+      productType: "Recovery"
+    }),
+    Product.create({
+      productName: "Yoga mat",
+      price: 80000,
+      description: "Used for all those good stretches",
+      productType: "Recovery"
     }),
   ]);
 
