@@ -24,7 +24,7 @@ const AllRecovery = () => {
                     allRecovery.map((equipment) => {
                         return(
                                 <div className="recoveryContainer" key={equipment.id}>
-                                    <Link className="individualEquipment" to={`/recoveryequipment/${equipment.id}`}>
+                                    <Link className="individualEquipment" to={`/singleproduct/${equipment.id}`}>
                                         <h1 >{`${equipment.productName}`}</h1>
                                     </Link>
                                 </div>

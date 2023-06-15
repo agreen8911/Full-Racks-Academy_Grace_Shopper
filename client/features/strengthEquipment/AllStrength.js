@@ -24,7 +24,7 @@ const AllStrength = () => {
                     allStrength.map((equipment) => {
                         return(
                                 <div className="equipmentContainer" key={equipment.id}>
-                                    <Link className="individualEquipment" to={`/strengthequipment/${equipment.id}`}>
+                                    <Link className="individualEquipment" to={`/singleproduct/${equipment.id}`}>
                                         <h1 >{`${equipment.productName}`}</h1>
                                     </Link>
                                 </div>
