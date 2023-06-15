@@ -27,6 +27,10 @@ const AppRoutes = () => {
         <Routes>
           <Route path="/*" element={<Home />} />
           <Route to="/home" element={<Home />} />
+          <Route path="/strengthequipment" element={<AllStrength/>}/>
+          <Route path="/cardioequipment" element={<AllCardio/>}/>
+          <Route path="/recoveryequipment" element={<AllRecovery/>}/>
+          <Route path="/allProducts" element={<AllProducts/> }/>
         </Routes>
       ) : (
         <Routes>
@@ -48,10 +52,7 @@ const AppRoutes = () => {
          <Route path="/cardioequipment" element={<AllCardio/>}/>
          <Route path="/recoveryequipment" element={<AllRecovery/>}/>
          <Route path="/home" element={<Home/>}/>
-          <Route 
-            path="/allProducts"
-            element={<AllProducts/> }
-          />
+         <Route path="/allProducts" element={<AllProducts/> }/>
 
         </Routes>
       
