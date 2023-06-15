@@ -1,5 +1,4 @@
 import React from 'react';
-
 import Navbar from '../features/navbar/Navbar';
 import AppRoutes from './AppRoutes';
 import Footer from '../features/footer/Footer'
@@ -7,8 +6,6 @@ import Footer from '../features/footer/Footer'
 
 const App = () => {
   return (
-
-
      <>
       <div className="bodyContainer">
         <Navbar />
@@ -17,7 +14,6 @@ const App = () => {
       </div>
 
     </>
-
   );
 };
 
