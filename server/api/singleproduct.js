@@ -8,7 +8,7 @@ router.get("/:id", async (req, res, next) => {
   try {
     const singleProductID = req.params.id;
 
-      const SingleProduct = await Product.findAll( {
+      const SingleProduct = await Product.findOne( {
        where: { id: singleProductID },
           
       }
