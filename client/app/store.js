@@ -13,7 +13,7 @@ const store = configureStore({
     allStrength: allStrengthSlice,
     allCardio: allCardioSlice,
     allRecovery: allRecoverySlice,
-    allProducts: allProductsSlice
+    allProducts: allProductsSlice,
     singleProduct: singleProductSlice
   },
 
