@@ -6,6 +6,7 @@ import allStrengthSlice from '../features/strengthEquipment/allStrengthSlice';
 import allCardioSlice from '../features/cardioEquipment/allCardioSlice';
 import allRecoverySlice from '../features/recoveryEquipment/allRecoverySlice';
 import allProductsSlice from '../features/allProducts/allProductsSlice';
+import allUsersSlice from '../features/adminView/adminViewSlice';
 
 const store = configureStore({
   reducer: { 
@@ -14,7 +15,8 @@ const store = configureStore({
     allCardio: allCardioSlice,
     allRecovery: allRecoverySlice,
     allProducts: allProductsSlice,
-    singleProduct: singleProductSlice
+    singleProduct: singleProductSlice,
+    allUsers: allUsersSlice,
   },
 
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),

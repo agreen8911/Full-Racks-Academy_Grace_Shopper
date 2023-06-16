@@ -9,6 +9,7 @@ import SingleProduct from '../features/SingleProduct/SingleProduct';
 import AllStrength from '../features/strengthEquipment/AllStrength';
 import AllCardio from '../features/cardioEquipment/AllCardio';
 import AllRecovery from '../features/recoveryEquipment/AllRecovery';
+import AdminView from '../features/adminView/AdminView';
 
 /**
  * COMPONENT
@@ -35,6 +36,8 @@ const AppRoutes = () => {
           <Route path="/cardioequipment" element={<AllCardio/>}/>
           <Route path="/recoveryequipment" element={<AllRecovery/>}/>
           <Route path="/allProducts" element={<AllProducts/> }/>
+          <Route path="/users" element={<AdminView/> }/>
+          
         </Routes>
       ) : (
         <Routes>

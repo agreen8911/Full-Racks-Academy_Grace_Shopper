@@ -18,6 +18,11 @@ const User = db.define("user", {
     //   is: /^[0-9a-f]{64}$/i
     // },
   },
+  userType: {
+    type: Sequelize.STRING,
+    allowNull: false,
+    defaultValue: "customer"
+  },
   firstName: {
     type: Sequelize.STRING,
     allowNull: false,
