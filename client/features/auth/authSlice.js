@@ -44,6 +44,20 @@ export const authenticate = createAsyncThunk(
     }
   }
 );
+
+
+//I am adding this here to add new user
+export const newUserSignIn = createAsyncThunk(
+  "auth/newUserSignIn",
+  async ({ username, password }) => {
+    try {
+      const { data } = await axios.post('/auth')
+    } catch (error) {
+      console.log(error);
+    }
+  }
+)
+
 /*
   SLICE
 */
@@ -70,6 +84,9 @@ export const authSlice = createSlice({
     builder.addCase(authenticate.rejected, (state, action) => {
       state.error = action.payload;
     });
+    builder.addCase(newUserSignIn.fulfilled, (state, action) => {
+      state.push(action.payload)
+    })
   },
 });
 /*
