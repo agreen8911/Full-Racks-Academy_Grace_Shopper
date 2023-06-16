@@ -9,11 +9,11 @@ const db = require('../db')
 const Cart = db.define('cart', {
   productName: {
     type: Sequelize.STRING,
-    allowNull: false
+    allowNull: true
   },
   quantity: {
     type: Sequelize.INTEGER,
-    allowNull: false
+    allowNull: true
   },
  
   imageUrl: {
