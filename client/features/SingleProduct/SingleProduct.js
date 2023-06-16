@@ -15,6 +15,10 @@ const SingleProduct = () => {
   useEffect(() => {
     dispatch(fetchSingleProduct(id));
   }, [dispatch] );
+
+  const handleAddToCart = (productId) => {
+    if(!user.me.id) return "not logged in"
+  }
   
   // const singleProduct = useSelector((state) => {
   //       return state.singleProduct.singleProduct;

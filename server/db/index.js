@@ -39,5 +39,6 @@ module.exports = {
     User,
     Product,
     Cart,
+    Cart_Products,
   },
 };
