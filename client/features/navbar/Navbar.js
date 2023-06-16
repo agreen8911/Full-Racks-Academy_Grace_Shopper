@@ -25,6 +25,7 @@ const Navbar = () => {
             </button>
             <Link to="/cart">Cart icon</Link>
             <Link to="/allProducts">All Products</Link>
+            <Link to="/adminview">Admin</Link>
             {/* check to make sure it is /allproducts vs /products */}
           </div>
         ) : (

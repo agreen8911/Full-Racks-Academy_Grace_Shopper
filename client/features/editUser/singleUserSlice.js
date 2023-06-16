@@ -37,7 +37,7 @@ const singleUserSlice = createSlice({
         }),
         builder.addCase(editUser.fulfilled, (state, action) => {
             console.log('action', action.payload)
-            state.userList = action.payload;
+            state.singleUser = action.payload;
         })
     }
 })

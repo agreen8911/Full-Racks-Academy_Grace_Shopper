@@ -5,12 +5,9 @@ export const fetchSingleProduct = createAsyncThunk(
   "singleProduct",
   async (id) => {
     try {
-      console.log("ID", id);
       const response = await axios.get(`/api/singleproduct/${id}`);
-      console.log("RESPONSE DATA", response.data);
       return response.data;
     } catch (err) {
-      console.log(err);
       throw err; // Throw the error to handle it in the rejected state
     }
   }
@@ -24,7 +21,6 @@ const singleProductSlice = createSlice({
    reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
-      console.log("PAYLOAD", action.payload);
       return action.payload;
     });
 

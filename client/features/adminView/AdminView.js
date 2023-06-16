@@ -1,8 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Navigate } from "react-router-dom";
 import { fetchAllUsers, deleteUser } from "./adminViewSlice";
-import EditUser from "../editUser/EditUser";
+import { fetchAllProductsAsync, selectAllProducts } from "../allProducts/allProductsSlice";
+import { useNavigate } from "react-router-dom";
 
 
 
@@ -10,32 +11,65 @@ const AllUsers = () => {
     const dispatch = useDispatch()
 
     const allUsers = useSelector((state) => {
-        // console.log('allUsers****', state.allUsers.userList)
         return state.allUsers.userList
     })
+
+    const allProducts = useSelector((state) => {
+        return state.allProducts.productList
+    })
+    const navigate = useNavigate();
+  
+    useEffect(() => {
+       dispatch(fetchAllProductsAsync())
+    }, [dispatch])
 
     useEffect(() => {
         dispatch(fetchAllUsers())
     }, [dispatch])
 
     const usersDiv =
-        allUsers ? (
+        allUsers && allProducts ? (
             <div>
-                 {
-                    allUsers.map((user) => {
-                        // console.log('user****', user)
-                        return(
-                            <div className="userContainer" key={user.id}>
-                                <Link className="individualStudent" to={`/adminview/${user.id}`}>
-                                    <h1 >{`${user.firstName} ${user.lastName}`}</h1>
-                                </Link>
-                                <button className="userDeleteBtn" onClick={()=>{
-                                    dispatch(deleteUser(user.id))
-                                }}>X</button>
-                            </div>
-                    )
-                    })
-                }
+                <h1 id="allUsersHeader">All Users</h1>
+                    <div>
+                    {
+                        allUsers.map((user) => {
+                            return(
+                                <div className="userContainer" key={user.id}>
+                                   
+                                    <Link className="individualUser" to={`/adminview/${user.id}`}>
+                                        <h1 >{`${user.firstName} ${user.lastName}`}</h1>
+                                    </Link>
+                                    <button className="userDeleteBtn" onClick={()=>{
+                                        dispatch(deleteUser(user.id))
+                                        fetchAllProductsAsync()
+                                    }}>X</button>
+                                    <button className="userEditBtn" onClick={()=>{
+                                        navigate(`/adminview/${user.id}`)
+                                    }}>Edit User</button>
+                                </div>
+                        )
+                        })
+                    }
+                    <div>
+                        <h1>All Products</h1>
+        
+                            {
+                                allProducts.map((product) => {
+                                return (
+                                    <div key={product.id} >
+                                    <Link to={`/singleproduct/${product.id}`}>
+                                        <h1>{product.productName}</h1>
+                                    </Link>
+                                    <button className="productEditBtn" onClick={()=>{
+                                        navigate(`/adminviewproduct/${product.id}`)
+                                    }}>Edit or Delete Product</button>
+                                    </div>
+                                )
+                                })
+                            }
+                    </div>
+                </div>
             </div>
         ) : (
             <div>No Users</div>
@@ -46,29 +80,6 @@ const AllUsers = () => {
             {usersDiv}
         </div>
     );
-
-    // return (
-    //     <div>
-    //         <div id="mainAdminDiv">
-
-    //             <h1 id="allUsersHeader">All Users</h1>
-            
-    //             {
-    //                 allUsers.map((user) => {
-    //                     return(
-    //                         <div className="userContainer" key={user.id}>
-    //                             <h1 >{`${user.firstName} ${user.lastName}`}</h1>
-    //                                 <button className="userDeleteBtn" onClick={()=>{
-    //                                     dispatch(deleteUser(user.id))
-    //                                 }}>X</button>
-    //                         </div>
-    //                     )
-    //                 })
-    //             }
-
-    //         </div>
-    //     </div>
-    // )
 }
 
 export default AllUsers

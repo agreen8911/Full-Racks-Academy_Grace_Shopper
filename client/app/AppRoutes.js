@@ -11,6 +11,7 @@ import AllCardio from '../features/cardioEquipment/AllCardio';
 import AllRecovery from '../features/recoveryEquipment/AllRecovery';
 import AdminView from '../features/adminView/AdminView';
 import EditUser from '../features/editUser/EditUser';
+import EditProduct from "../features/editProduct/EditProduct"
 
 /**
  * COMPONENT
@@ -20,6 +21,11 @@ import EditUser from '../features/editUser/EditUser';
 const AppRoutes = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
   const dispatch = useDispatch();
+  // const isAdmin = useSelector((state) => {
+  //       return state.singleUser.singleUser;
+  //   });
+
+  // console.log('isAdmin', isAdmin)
 
   useEffect(() => {
     dispatch(me());
@@ -39,6 +45,7 @@ const AppRoutes = () => {
           <Route path="/allProducts" element={<AllProducts/> }/>
           <Route path="/adminview" element={<AdminView/> }/>
           <Route path="/adminview/:id" element={<EditUser/> }/>
+          <Route path="/adminviewproduct/:id" element={<EditProduct/> }/>
           
         </Routes>
       ) : (

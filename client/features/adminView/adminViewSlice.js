@@ -5,7 +5,6 @@ export const fetchAllUsers = createAsyncThunk(
     "allUsers", async () => {
         try{
             const{data} = await axios.get("/api/adminview")
-            // console.log("THIS IS DATA!@", data)
             return data
         } catch (err) {
             console.log(err)
@@ -32,7 +31,6 @@ const allUsersSlice = createSlice({
 
     extraReducers: (builder) => {
         builder.addCase(fetchAllUsers.fulfilled, (state, action)=> {
-            console.log("FULFILLED", action.payload)
             state.userList = action.payload
         }),
         builder.addCase(fetchAllUsers.rejected, (state, action)=> {

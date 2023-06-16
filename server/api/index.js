@@ -8,6 +8,7 @@ router.use('/cardioequipment', require('./cardio_view'))
 router.use('/recoveryequipment', require('./recovery_view'))
 router.use("/allProducts", require('./allProducts'))
 router.use("/adminview", require('./admin_view'))
+router.use("/adminviewproduct", require('./admin_view_product'))
 
 router.use((req, res, next) => {
   const error = new Error('Not Found')
