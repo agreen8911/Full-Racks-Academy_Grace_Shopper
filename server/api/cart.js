@@ -1,11 +1,12 @@
 const router = require('express').Router()
 module.exports = router
 
+
 const { models: { Cart }} = require('../db')
 
 
 
-router.get('/cart', async (req, res, next) => {
+router.get('/:id', async (req, res, next) => {
 try {
     const openCart = await Cart.findOne({
         where: {

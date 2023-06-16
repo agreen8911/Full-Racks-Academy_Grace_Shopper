@@ -23,7 +23,7 @@ const Cart = db.define('cart', {
   // totalPrice: {
   //   type: Sequelize.INTEGER
   // }
-  orderStatus: {
+ status: {
     type: Sequelize.STRING,
     allowNull: false,
 

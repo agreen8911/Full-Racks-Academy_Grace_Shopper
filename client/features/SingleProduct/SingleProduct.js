@@ -1,14 +1,20 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchSingleProduct, selectSingleProduct } from './SingleProductSlice';
+import { fetchSingleProduct, selectSingleProduct, fetchCart } from './SingleProductSlice';
+import { selectUser } from '../auth/authSlice';
+
 
 const SingleProduct = () => {
   const { id } = useParams();
-  console.log('Product ID:', id); 
+  // console.log('Product ID:', id); 
   const dispatch = useDispatch();
   const singleProduct = useSelector( selectSingleProduct );
-  console.log("SINGLE PRODUCT",singleProduct);
+  // console.log("SINGLE PRODUCT",singleProduct);
+
+  const user = useSelector(selectUser)
+  console.log("this is user",user)
+
   const priceFunction = () => {
     return singleProduct.price / 100
   }
@@ -18,6 +24,9 @@ const SingleProduct = () => {
 
   const handleAddToCart = (productId) => {
     if(!user.me.id) return "not logged in"
+    dispatch(fetchCart(user.me.id)).then((res)=> console.log("this is res on dispatch", res) )
+
+    
   }
   
   // const singleProduct = useSelector((state) => {
@@ -46,7 +55,7 @@ const SingleProduct = () => {
           
                 </h1>
               <img src={singleProduct.imageUrl} alt={singleProduct.productName} />
-              <button>Add to Cart </button>
+              <button onClick={() => handleAddToCart(singleProduct.id)}>Add to Cart </button>
             </div>
         ) : (
             <div>No SingleProduct</div>

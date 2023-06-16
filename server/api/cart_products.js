@@ -13,7 +13,7 @@ try {
         if(!existingCartProduct){
             const newCartProduct = await Cart_Products.create({
                 orderId: req.body.id,
-                productId: req.body. productId,
+                productId: req.body.productId,
                 unitPrice: req.body.price,
                 quantity: req.body.quantity 
             });
