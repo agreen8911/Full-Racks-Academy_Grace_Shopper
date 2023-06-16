@@ -4,7 +4,7 @@ import axios from "axios";
 export const fetchAllUsers = createAsyncThunk(
     "allUsers", async () => {
         try{
-            const{data} = await axios.get("/api/users")
+            const{data} = await axios.get("/api/adminview")
             // console.log("THIS IS DATA!@", data)
             return data
         } catch (err) {
@@ -16,7 +16,7 @@ export const fetchAllUsers = createAsyncThunk(
 export const deleteUser = createAsyncThunk(
     "deleteUser", async (userId) => {
         try{
-            const {data} = await axios.delete(`/api/users/${userId}`)
+            const {data} = await axios.delete(`/api/adminview/${userId}`)
             return data
         } catch (err) {
             console.log(err)
@@ -37,7 +37,7 @@ const allUsersSlice = createSlice({
         }),
         builder.addCase(fetchAllUsers.rejected, (state, action)=> {
             console.log("Rejected")
-        })
+        }),
         builder.addCase(deleteUser.fulfilled, (state, action)=> {
             const currentUsers = state.userList
             const userId = action.payload.id

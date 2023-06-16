@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAllUsers, deleteUser } from "./adminViewSlice";
+import EditUser from "../editUser/EditUser";
 
 
 
@@ -23,15 +24,16 @@ const AllUsers = () => {
                  {
                     allUsers.map((user) => {
                         // console.log('user****', user)
-                        return (
+                        return(
                             <div className="userContainer" key={user.id}>
-                                <h1 >{`User Name: ${user.username}`}</h1>
-                                <h1 >{`User ID: ${user.id} `}</h1>
-                                    <button className="userDeleteBtn" onClick={()=>{
-                                        dispatch(deleteUser(user.id))
-                                    }}>X</button>
+                                <Link className="individualStudent" to={`/adminview/${user.id}`}>
+                                    <h1 >{`${user.firstName} ${user.lastName}`}</h1>
+                                </Link>
+                                <button className="userDeleteBtn" onClick={()=>{
+                                    dispatch(deleteUser(user.id))
+                                }}>X</button>
                             </div>
-                        )
+                    )
                     })
                 }
             </div>
