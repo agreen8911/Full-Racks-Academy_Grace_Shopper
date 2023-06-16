@@ -16,8 +16,6 @@ router.get('/', async (req, res, next) => {
   }
 })
 
-
-//this is my post route
 router.post('/', async (req, res, next) => {
   try {
     const newUser = await User.create(req.body)
@@ -26,3 +24,4 @@ router.post('/', async (req, res, next) => {
     next(error)
   }
 })
+

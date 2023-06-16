@@ -1,11 +1,9 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
-
 /*
   CONSTANT VARIABLES
 */
 const TOKEN = 'token';
-
 /*
   THUNKS
 */
@@ -30,7 +28,6 @@ export const me = createAsyncThunk('auth/me', async () => {
     }
   }
 });
-
 export const authenticate = createAsyncThunk(
   'auth/authenticate',
   async ({ username, password, method }, thunkAPI) => {
@@ -48,6 +45,7 @@ export const authenticate = createAsyncThunk(
   }
 );
 
+
 //I am adding this here to add new user
 export const newUserSignIn = createAsyncThunk(
   "auth/newUserSignIn",
@@ -59,7 +57,6 @@ export const newUserSignIn = createAsyncThunk(
     }
   }
 )
-
 
 /*
   SLICE
@@ -92,12 +89,10 @@ export const authSlice = createSlice({
     })
   },
 });
-
 /*
   ACTIONS
 */
 export const { logout } = authSlice.actions;
-
 /*
   REDUCER
 */

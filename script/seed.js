@@ -18,6 +18,7 @@ async function seed() {
     User.create({
       username: "cody",
       password: "123",
+      userType: "customer",
       firstName: "Cody",
       lastName: "Jones",
       email: "cjones@hotmail.com",
@@ -27,6 +28,7 @@ async function seed() {
     User.create({
       username: "murphy",
       password: "123",
+      userType: "customer",
       firstName: "Murphy",
       lastName: "Coolname",
       email: "cjones@hotmail.com",
@@ -35,6 +37,7 @@ async function seed() {
     User.create({
       username: "coolguy999",
       password: "123",
+      userType: "customer",
       firstName: "Cool",
       lastName: "Guy",
       email: "coolguy@hotmail.com",
@@ -43,9 +46,19 @@ async function seed() {
     User.create({
       username: "JD123",
       password: "123",
+      userType: "customer",
       firstName: "Jon",
       lastName: "Does",
       email: "jdoe@hotmail.com",
+      cart: []
+    }),
+    User.create({
+      username: "AG123",
+      password: "123",
+      userType: "admin",
+      firstName: "Adam",
+      lastName: "Green",
+      email: "agreen@hotmail.com",
       cart: []
     }),
   ]);
