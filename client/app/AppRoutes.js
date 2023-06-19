@@ -20,12 +20,9 @@ import EditProduct from "../features/editProduct/EditProduct"
 
 const AppRoutes = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  console.log('isLoggedIn', isLoggedIn)
   const dispatch = useDispatch();
-  // const isAdmin = useSelector((state) => {
-  //       return state.singleUser.singleUser;
-  //   });
 
-  // console.log('isAdmin', isAdmin)
 
   useEffect(() => {
     dispatch(me());

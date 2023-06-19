@@ -18,10 +18,10 @@ const User = db.define("user", {
     //   is: /^[0-9a-f]{64}$/i
     // },
   },
-  userType: {
-    type: Sequelize.STRING,
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
     allowNull: false,
-    defaultValue: "customer"
+    defaultValue: false
   },
   firstName: {
     type: Sequelize.STRING,
@@ -38,13 +38,6 @@ const User = db.define("user", {
       isEmail: true,
     },
   },
-  //cart: {
-    // type: Sequelize.INTEGER,
-    // references: {
-    //   model: "products",
-    //   key: "id",
-    // },
-  // },
 });
 
 module.exports = User;
@@ -58,7 +51,7 @@ User.prototype.correctPassword = function (candidatePwd) {
 };
 
 User.prototype.generateToken = function () {
-  return jwt.sign({ id: this.id }, process.env.JWT);
+  return jwt.sign({ id: this.id, isAdmin: this.isAdmin }, process.env.JWT);
 };
 
 /**
