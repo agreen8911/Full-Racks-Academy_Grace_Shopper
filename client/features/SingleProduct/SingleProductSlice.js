@@ -27,6 +27,18 @@ export const fetchCart = createAsyncThunk(
   }
 )
 
+export const addToCartProducts = createAsyncThunk(
+  'addCartProduct', async (product) => {
+    try {
+      const { data } = axios.post('/api/cartproducts', product)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+)
+
 const singleProductSlice = createSlice({
   name: "singleProduct",
   initialState: {
@@ -42,6 +54,8 @@ const singleProductSlice = createSlice({
     builder.addCase(fetchSingleProduct.rejected, (state, action) => {
       console.log("rejected");
     });
+
+  
   },
 });
 

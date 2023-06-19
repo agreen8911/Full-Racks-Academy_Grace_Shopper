@@ -2,17 +2,17 @@ const router = require('express').Router()
 module.exports = router
 const { models: { Cart_Products }} = require('../db')
 
-router.post('/addcartproduct', async (req, res, next) => {
+router.post('/', async (req, res, next) => {
 try {
         const existingCartProduct = await Cart_Products.findOne({
             where: {
-                orderId: req.body.id,
+                cartId: req.body.id,
                 productId: req.body.productId
             }
         });
         if(!existingCartProduct){
             const newCartProduct = await Cart_Products.create({
-                orderId: req.body.id,
+                cartId: req.body.id,
                 productId: req.body.productId,
                 unitPrice: req.body.price,
                 quantity: req.body.quantity 

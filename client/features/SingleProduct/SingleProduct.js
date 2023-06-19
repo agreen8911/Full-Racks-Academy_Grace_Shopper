@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchSingleProduct, selectSingleProduct, fetchCart } from './SingleProductSlice';
+import { fetchSingleProduct, selectSingleProduct, fetchCart, addToCartProducts } from './SingleProductSlice';
 import { selectUser } from '../auth/authSlice';
 
 
@@ -24,14 +24,15 @@ const SingleProduct = () => {
 
   const handleAddToCart = (productId) => {
     if(!user.me.id) return "not logged in"
-    dispatch(fetchCart(user.me.id)).then((res)=> console.log("this is res on dispatch", res) )
-
+    // dispatch(fetchCart(user.me.id)).then((res)=> console.log("this is res on dispatch", res.payload) )
+    dispatch(fetchCart(user.me.id)).then((res)=>{
+      const cartId = res.payload.id;
+      console.log('this is price', singleProduct.price)
+      dispatch(addToCartProducts({cartId, productId, quantity: 1, unitPrice: singleProduct.price}))
+    } )
     
   }
-  
-  // const singleProduct = useSelector((state) => {
-  //       return state.singleProduct.singleProduct;
-  //   });
+
   
   if (!singleProduct) {
     // Handle the case when the product data is still being fetched
