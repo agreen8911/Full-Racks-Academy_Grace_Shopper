@@ -8,7 +8,6 @@ export const fetchSingleProduct = createAsyncThunk(
       const response = await axios.get(`/api/singleproduct/${id}`);
       return response.data;
     } catch (err) {
-      console.log(err);
       throw err; // Throw the error to handle it in the rejected state
     }
   }

@@ -1,18 +1,18 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
+
 import { fetchSingleProduct, selectSingleProduct, fetchCart, addToCartProducts } from './SingleProductSlice';
 import { selectUser } from '../auth/authSlice';
+
 
 
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const singleProduct = useSelector( selectSingleProduct );
-
   const user = useSelector(selectUser)
-  console.log("this is user",user)
-
+ 
   const priceFunction = () => {
     return singleProduct.price / 100
   }

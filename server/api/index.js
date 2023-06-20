@@ -7,6 +7,8 @@ router.use('/strengthequipment', require('./strength_view'))
 router.use('/cardioequipment', require('./cardio_view'))
 router.use('/recoveryequipment', require('./recovery_view'))
 router.use("/allProducts", require('./allProducts'))
+router.use("/adminview", require('./admin_view'))
+router.use("/adminviewproduct", require('./admin_view_product'))
 
 router.use('/cart', require('./cart'))
 router.use('/cartproducts', require('./cart_products'))
