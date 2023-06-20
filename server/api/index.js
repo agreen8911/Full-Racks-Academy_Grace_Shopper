@@ -32,6 +32,9 @@ router.use("/allProducts", require('./allProducts'))
 router.use("/adminview", isAdminCheck, require('./admin_view'))
 router.use("/adminviewproduct", isAdminCheck, require('./admin_view_product'))
 
+router.use('/cart', require('./cart'))
+router.use('/cartproducts', require('./cart_products'))
+
 router.use((req, res, next) => {
   const error = new Error('Not Found')
   error.status = 404
