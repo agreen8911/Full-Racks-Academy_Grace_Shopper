@@ -61,6 +61,33 @@ async function seed() {
       email: "agreen@hotmail.com",
       cart: []
     }),
+    User.create({
+      username: "DR123",
+      password: "123",
+      isAdmin: true,
+      firstName: "Daniel",
+      lastName: "Rodriguez",
+      email: "drodriguez@hotmail.com",
+      cart: []
+    }),
+    User.create({
+      username: "DJ123",
+      password: "123",
+      isAdmin: true,
+      firstName: "Dakota",
+      lastName: "Jennings",
+      email: "djennings@hotmail.com",
+      cart: []
+    }),
+    User.create({
+      username: "AA123",
+      password: "123",
+      isAdmin: true,
+      firstName: "Alejandro",
+      lastName: "Armas",
+      email: "aarmas@hotmail.com",
+      cart: []
+    }),
   ]);
 
   const products = await Promise.all([
