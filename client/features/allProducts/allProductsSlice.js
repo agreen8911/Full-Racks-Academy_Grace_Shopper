@@ -8,7 +8,6 @@ export const fetchAllProductsAsync = createAsyncThunk(
     async () => {
         try {
             const { data } = await axios.get('/api/allProducts')
-            console.log("THIS IS DATA-----", data);
             return data
         } catch (error) {
             console.log(error);

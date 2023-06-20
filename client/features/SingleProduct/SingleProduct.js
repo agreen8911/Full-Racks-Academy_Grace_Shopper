@@ -7,10 +7,8 @@ import { selectUser } from '../auth/authSlice';
 
 const SingleProduct = () => {
   const { id } = useParams();
-  // console.log('Product ID:', id); 
   const dispatch = useDispatch();
   const singleProduct = useSelector( selectSingleProduct );
-  // console.log("SINGLE PRODUCT",singleProduct);
 
   const user = useSelector(selectUser)
   console.log("this is user",user)
@@ -24,16 +22,12 @@ const SingleProduct = () => {
 
   const handleAddToCart = (productId) => {
     if(!user.me.id) return "not logged in"
-    // dispatch(fetchCart(user.me.id)).then((res)=> console.log("this is res on dispatch", res.payload) )
     dispatch(fetchCart(user.me.id)).then((res)=>{
       const cartId = res.payload.id;
-      console.log('this is price', singleProduct.price)
       dispatch(addToCartProducts({cartId, productId, quantity: 1, unitPrice: singleProduct.price}))
     } )
-    
   }
 
-  
   if (!singleProduct) {
     // Handle the case when the product data is still being fetched
     return <div>Loading...</div>;
