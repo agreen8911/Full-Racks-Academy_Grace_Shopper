@@ -100,6 +100,7 @@ export const selectUser = (state) => state.auth
   ACTIONS
 */
 export const { logout } = authSlice.actions;
+export const selectUser = (state) => state.auth
 /*
   REDUCER
 */

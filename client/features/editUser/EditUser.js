@@ -15,7 +15,6 @@ const EditUser = () => {
 	const { id } = useParams();
 
 	const [username, setUserName] = useState("");
-	const [userType, setUserType] = useState("");
 	const [firstName, setFirstName] = useState("");
 	const [lastName, setLastName] = useState("");
 	const [email, setEmail] = useState("");
@@ -27,7 +26,6 @@ const EditUser = () => {
 			editUser({
 				id,
 				username,
-				userType,
 				firstName,
 				lastName,
 				email,
@@ -35,12 +33,14 @@ const EditUser = () => {
 		);
 		dispatch(fetchSingleUser(id));
      	setUserName("");
-		setUserType("");		
 		setFirstName("");
      	setLastName("");
      	setEmail("");
+
+		 navigate("/adminview")
+
 	};
-	//
+	
 	const handleDelete = () => {
 		dispatch(deleteUser(id));
 		navigate("/adminview");
@@ -61,14 +61,6 @@ const EditUser = () => {
 						value={username}
 						placeholder="Enter User Name"
 						onChange={(e) => setUserName(e.target.value)}
-					/>
-
-					<label htmlFor="userType">User Type:</label>
-					<input
-						name="userType" 
-						value={userType}
-						placeholder="Enter User's Type"
-						onChange={(e) => setUserType(e.target.value)}
 					/>
 
 					<label htmlFor="firstName">First Name:</label>

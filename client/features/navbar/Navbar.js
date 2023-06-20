@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../app/store';
+import { selectUser } from '../auth/authSlice';
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
@@ -11,12 +12,14 @@ const Navbar = () => {
     dispatch(logout());
     navigate('/login');
   };
+  const user = useSelector(selectUser)
+  const isAdmin = user.me.isAdmin
 
   return (
     <div>
       <h1 className="NBheader">Full Racks Academy</h1>
       <nav>
-        {isLoggedIn ? (
+        {isLoggedIn && isAdmin ? (
           <div className='NBlinks'>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
@@ -41,6 +44,9 @@ const Navbar = () => {
               {/* So do we want to have log in and sign up separate? or do we make the log in page also have the signup option? */}
               <Link to="/signup">Cart(image or icon)</Link>
               {/* Do we want a user who is not logged in to even be able to see the cart option? i put the route as going to signup to force them into an account lol */}
+              <button type="button" onClick={logoutAndRedirectHome}>
+              Logout
+            </button>
             </div>
           </div>
         )}

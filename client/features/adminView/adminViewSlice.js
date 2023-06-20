@@ -1,10 +1,18 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
+const TOKEN = 'token';
+
+
 export const fetchAllUsers = createAsyncThunk(
     "allUsers", async () => {
+        const token = window.localStorage.getItem(TOKEN);
         try{
-            const{data} = await axios.get("/api/adminview")
+            const{data} = await axios.get("/api/adminview", {
+                headers: {
+                    authorization: token
+                }
+            })
             return data
         } catch (err) {
             console.log(err)
@@ -14,8 +22,13 @@ export const fetchAllUsers = createAsyncThunk(
 
 export const deleteUser = createAsyncThunk(
     "deleteUser", async (userId) => {
+        const token = window.localStorage.getItem(TOKEN);
         try{
-            const {data} = await axios.delete(`/api/adminview/${userId}`)
+            const {data} = await axios.delete(`/api/adminview/${userId}`, {
+                headers: {
+                    authorization: token
+                }
+            })
             return data
         } catch (err) {
             console.log(err)

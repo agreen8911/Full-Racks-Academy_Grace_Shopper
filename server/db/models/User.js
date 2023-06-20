@@ -15,10 +15,10 @@ const User = db.define("user", {
     type: Sequelize.STRING,
     allowNull: false,
   },
-  userType: {
-    type: Sequelize.STRING,
+  isAdmin: {
+    type: Sequelize.BOOLEAN,
     allowNull: false,
-    defaultValue: "customer"
+    defaultValue: false
   },
   firstName: {
     type: Sequelize.STRING,
@@ -48,7 +48,7 @@ User.prototype.correctPassword = function (candidatePwd) {
 };
 
 User.prototype.generateToken = function () {
-  return jwt.sign({ id: this.id }, process.env.JWT);
+  return jwt.sign({ id: this.id, isAdmin: this.isAdmin }, process.env.JWT);
 };
 
 /**
