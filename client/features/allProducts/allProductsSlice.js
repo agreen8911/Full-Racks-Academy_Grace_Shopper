@@ -30,6 +30,7 @@ const allProductsSlice = createSlice({
 })
 
 export const selectAllProducts = (state) => {
+    console.log("this is state from allProducts Slice", state)
     return state.allProducts
 }
 

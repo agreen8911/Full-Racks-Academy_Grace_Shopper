@@ -76,6 +76,7 @@ export const authSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder.addCase(me.fulfilled, (state, action) => {
+      console.log("this is me action.payload", action.payload)
       state.me = action.payload;
     });
     builder.addCase(me.rejected, (state, action) => {
@@ -89,6 +90,12 @@ export const authSlice = createSlice({
     })
   },
 });
+
+
+export const selectUser = (state) => state.auth
+
+
+
 /*
   ACTIONS
 */

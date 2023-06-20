@@ -13,17 +13,37 @@ export const fetchSingleProduct = createAsyncThunk(
   }
 );
 
+export const fetchCart = createAsyncThunk(
+  'singleCart', async (userId) => {
+    try {
+      const response = await axios.get(`/api/cart/${userId}`);
+      return response.data
+    } catch (error) {
+      console.log(error)
+    }
+  }
+)
+
+export const addToCartProducts = createAsyncThunk(
+  'addCartProduct', async (product) => {
+    try {
+      const { data } = axios.post('/api/cartproducts', product)
+      return data
+    } catch (error) {
+      console.log(error)
+    }
+
+  }
+)
+
 const singleProductSlice = createSlice({
   name: "singleProduct",
-  initialState: {
-  
-  },
+  initialState: {},
    reducers: {},
   extraReducers: (builder) => {
     builder.addCase(fetchSingleProduct.fulfilled, (state, action) => {
       return action.payload;
     });
-
     builder.addCase(fetchSingleProduct.rejected, (state, action) => {
       console.log("rejected");
     });
@@ -31,7 +51,10 @@ const singleProductSlice = createSlice({
 });
 
 export const selectSingleProduct = (state) => {
+  console.log("this is all state", state)
   return state.singleProduct;
 };
+
+
 
 export default singleProductSlice.reducer;

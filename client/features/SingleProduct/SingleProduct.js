@@ -1,27 +1,33 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
-import { fetchSingleProduct, selectSingleProduct } from './SingleProductSlice';
-// import { selectUser } from '../editUser/singleUserSlice'
+
+import { fetchSingleProduct, selectSingleProduct, fetchCart, addToCartProducts } from './SingleProductSlice';
+import { selectUser } from '../auth/authSlice';
+
+
 
 const SingleProduct = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const singleProduct = useSelector( selectSingleProduct );
-  // const user = selectUser(selectUser)
-  // console.log('selectUser', user)
-
+  const user = useSelector(selectUser)
+ 
   const priceFunction = () => {
     return singleProduct.price / 100
   }
   useEffect(() => {
     dispatch(fetchSingleProduct(id));
   }, [dispatch] );
-  
-  // const singleProduct = useSelector((state) => {
-  //       return state.singleProduct.singleProduct;
-  //   });
-  
+
+  const handleAddToCart = (productId) => {
+    if(!user.me.id) return "not logged in"
+    dispatch(fetchCart(user.me.id)).then((res)=>{
+      const cartId = res.payload.id;
+      dispatch(addToCartProducts({cartId, productId, quantity: 1, unitPrice: singleProduct.price}))
+    } )
+  }
+
   if (!singleProduct) {
     // Handle the case when the product data is still being fetched
     return <div>Loading...</div>;
@@ -44,7 +50,7 @@ const SingleProduct = () => {
           
                 </h1>
               <img src={singleProduct.imageUrl} alt={singleProduct.productName} />
-              <button>Add to Cart </button>
+              <button onClick={() => handleAddToCart(singleProduct.id)}>Add to Cart </button>
             </div>
         ) : (
             <div>No SingleProduct</div>
