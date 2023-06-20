@@ -60,6 +60,7 @@ export const deleteProduct = createAsyncThunk(
             console.log(err)
         }
     }
+)
 
 export const fetchCart = createAsyncThunk(
   'singleCart', async (userId) => {
