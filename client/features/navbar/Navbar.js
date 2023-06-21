@@ -23,7 +23,7 @@ const Navbar = () => {
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
             </button>
-            <Link to="/cart">Cart icon</Link>
+            <Link to="/cartdisplay">Cart icon</Link>
             <Link to="/allProducts">All Products</Link>
             <Link to="/adminview">Admin</Link>
             {/* check to make sure it is /allproducts vs /products */}
@@ -39,7 +39,7 @@ const Navbar = () => {
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
               {/* So do we want to have log in and sign up separate? or do we make the log in page also have the signup option? */}
-              <Link to="/signup">Cart(image or icon)</Link>
+              <Link to="/cartdisplay">Cart(image or icon)</Link>
               {/* Do we want a user who is not logged in to even be able to see the cart option? i put the route as going to signup to force them into an account lol */}
             </div>
           </div>

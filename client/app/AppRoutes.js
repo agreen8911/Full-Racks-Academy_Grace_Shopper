@@ -12,6 +12,7 @@ import AllRecovery from '../features/recoveryEquipment/AllRecovery';
 import AdminView from '../features/adminView/AdminView';
 import EditUser from '../features/editUser/EditUser';
 import EditProduct from "../features/editProduct/EditProduct"
+import CartView from '../features/CartDisplay/Cartview';
 
 /**
  * COMPONENT
@@ -46,7 +47,7 @@ const AppRoutes = () => {
           <Route path="/adminview" element={<AdminView/> }/>
           <Route path="/adminview/:id" element={<EditUser/> }/>
           <Route path="/adminviewproduct/:id" element={<EditProduct/> }/>
-          
+          <Route path="/cartdisplay" element={<CartView/>}/>          
         </Routes>
       ) : (
         <Routes>
@@ -60,6 +61,8 @@ const AppRoutes = () => {
           <Route path="/cardioequipment" element={<AllCardio/>}/>
           <Route path="/recoveryequipment" element={<AllRecovery/>}/>
           <Route path="/allProducts" element={<AllProducts/> }/>
+          <Route path="/cartdisplay" element={<CartView/>}/> 
+          
         </Routes>
       ) 
 

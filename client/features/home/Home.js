@@ -30,6 +30,9 @@ const Home = (props) => {
         <div id='HPallProducts'> 
           <Link to="/allProducts"><h1>View All Products</h1></Link>
         </div>
+        <div id='HPcartView'> 
+          <Link to="/cartdisplay"><h1>Cart</h1></Link>
+        </div>
       </div>
 
     </div>
