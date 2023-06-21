@@ -15,15 +15,15 @@ const AllCardio = () => {
     }, [])
 
     return (
-        <div>
-            <div id="mainCardioDiv">
+        <div className="allProducts-main">
+            <h1>All Cardio Equipment</h1>
 
-                <h1 id="allCardioHeader">Cardio Equipment</h1>
-            
+            <div className="allProducts-container">
+
                 {
                     allCardio.map((equipment) => {
                         return(
-                                <div className="cardioContainer" key={equipment.id}>
+                                <div className="productCard" key={equipment.id}>
                                     <Link className="individualEquipment" to={`/singleproduct/${equipment.id}`}>
                                         <h1 >{`${equipment.productName}`}</h1>
                                     </Link>

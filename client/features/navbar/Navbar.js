@@ -16,19 +16,19 @@ const Navbar = () => {
   const isAdmin = user.me.isAdmin
 
   return (
-    <div>
+    <div className='NBmain-Container'>
       <h1 className="NBheader">Full Racks Academy</h1>
       <nav>
         {isLoggedIn && isAdmin ? (
           <div className='NBlinks'>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
-            <button type="button" onClick={logoutAndRedirectHome}>
-              Logout
-            </button>
             <Link to="/cart">Cart icon</Link>
             <Link to="/allProducts">All Products</Link>
             <Link to="/adminview">Admin</Link>
+            <button type="button" onClick={logoutAndRedirectHome}>
+              Logout
+            </button>
             {/* check to make sure it is /allproducts vs /products */}
           </div>
         ) : (
@@ -44,14 +44,10 @@ const Navbar = () => {
               {/* So do we want to have log in and sign up separate? or do we make the log in page also have the signup option? */}
               <Link to="/signup">Cart(image or icon)</Link>
               {/* Do we want a user who is not logged in to even be able to see the cart option? i put the route as going to signup to force them into an account lol */}
-              <button type="button" onClick={logoutAndRedirectHome}>
-              Logout
-            </button>
             </div>
           </div>
         )}
       </nav>
-      <hr />
     </div>
   );
 };

@@ -50,13 +50,13 @@ const EditProduct = () => {
 	};
 
 	return (
-		<div id="editProductWrapper">
-			<div className="editProductContainer">
+		<div className="login-shell">
+			<div className="login-mainWrapper">
 				<li key={id}>
-					<h2 id="editProductHeader"> Edit Product Info Below</h2>
+					<h2> Edit Product Info Below</h2>
 				</li>
 
-				<form id="product-form" onSubmit={handleSubmit}>
+				<form className="loginForm-wrapper" onSubmit={handleSubmit}>
 
 					<label htmlFor="productName">Product Name:</label>
 					<input

@@ -31,7 +31,7 @@ const AppRoutes = () => {
   }, []);
 
   return (
-    <div>
+    <div className='appRoutes-wrapper'>
       {isLoggedIn ? (
         isAdmin ? (
         <Routes>

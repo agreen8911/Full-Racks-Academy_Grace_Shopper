@@ -15,15 +15,15 @@ const AllRecovery = () => {
     }, [])
 
     return (
-        <div>
-            <div id="mainRecoveryDiv">
+        <div className="allProducts-main">
+            <h1>All Recovery Equipment</h1>
 
-                <h1 id="allRecoveryHeader">Recovery Equipment</h1>
+            <div className="allProducts-container">    
             
                 {
                     allRecovery.map((equipment) => {
                         return(
-                                <div className="recoveryContainer" key={equipment.id}>
+                                <div className="productCard" key={equipment.id}>
                                     <Link className="individualEquipment" to={`/singleproduct/${equipment.id}`}>
                                         <h1 >{`${equipment.productName}`}</h1>
                                     </Link>

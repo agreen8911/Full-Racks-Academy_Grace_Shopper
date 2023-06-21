@@ -47,13 +47,13 @@ const EditUser = () => {
 	};
 
 	return (
-		<div id="editUserWrapper">
-			<div className="editUserContainer">
+		<div className="login-shell">
+			<div className="login-mainWrapper">
 				<li key={id}>
-					<h2 id="editUserHeader"> Edit User Info Below</h2>
+					<h2> Edit User Info Below</h2>
 				</li>
 
-				<form id="user-form" onSubmit={handleSubmit}>
+				<form className="loginForm-wrapper" onSubmit={handleSubmit}>
 
 					<label htmlFor="username">User Name:</label>
 					<input
