@@ -9,6 +9,8 @@ import allProductsSlice from '../features/allProducts/allProductsSlice';
 import allUsersSlice from '../features/adminView/adminViewSlice';
 import singleUserSlice from '../features/editUser/singleUserSlice';
 import editProductSlice from '../features/editProduct/editProductSlice';
+import allCartviewSlice from '../features/cartDisplay/CartViewSlice';
+
 
 const store = configureStore({
   reducer: { 
@@ -20,7 +22,8 @@ const store = configureStore({
     singleProduct: singleProductSlice,
     allUsers: allUsersSlice,
     singleUser: singleUserSlice,
-    editProduct: editProductSlice
+    editProduct: editProductSlice,
+    cartDisplay: allCartviewSlice
   },
 
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
