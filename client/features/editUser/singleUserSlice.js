@@ -1,10 +1,17 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
+const TOKEN = 'token';
+
 
 export const fetchSingleUser = createAsyncThunk(
     "singleUser", async(userId) => {
+        const token = window.localStorage.getItem(TOKEN);
         try{
-            const {data} = await axios.get(`/api/adminview/${userId}`)
+            const {data} = await axios.get(`/api/adminview/${userId}`, {
+                headers: {
+                    authorization: token
+                },
+            })
             return data
         } catch (err) {
             console.log(err)
@@ -13,18 +20,22 @@ export const fetchSingleUser = createAsyncThunk(
 )
 
 export const editUser = createAsyncThunk(
-    "editUser",
-    async ( { id, username, userType, firstName, lastName, email } ) => {
-        const { data } = await axios.put(`/api/adminview/${id}`, {
-            username,
-            userType,
-            firstName, 
-            lastName, 
-            email
-        });
-        return data
+    "editUser", 
+    async ({ id, username, firstName, lastName, email }) => {
+      const token = window.localStorage.getItem(TOKEN);
+      const response = await axios.put(`/api/adminview/${id}`, {
+        username,
+        firstName,
+        lastName,
+        email
+      }, {
+        headers: {
+          authorization: token
+        }
+      });
+      return response.data;
     }
-);
+)
 
 const singleUserSlice = createSlice({
     name: "singleUser",
@@ -36,7 +47,6 @@ const singleUserSlice = createSlice({
             state.singleUser = action.payload
         }),
         builder.addCase(editUser.fulfilled, (state, action) => {
-            console.log('action', action.payload)
             state.singleUser = action.payload;
         })
     }

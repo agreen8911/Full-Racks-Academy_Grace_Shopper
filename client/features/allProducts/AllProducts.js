@@ -16,23 +16,28 @@ const AllProducts = () => {
     }, [dispatch])
 
     return (
-        <div>
+        <div className="allProducts-main">
           <h1>All Products</h1>
-      
-          {
-            allProducts.map((product) => {
-              return (
-                <div key={product.id} >
-                  <Link to={`/singleproduct/${product.id}`}>
-                    <h1>{product.productName}</h1>
-                  </Link>
-                  <p>{product.price}</p>
-                  <p>{product.description}</p>
-                  <img src={product.imageUrl}/>
-                </div>
-              )
-            })
-          }
+
+          <div className="allProducts-container">
+        
+            {
+              allProducts.map((product) => {
+                return (
+                  <div className="productCard" key={product.id} >
+                    <Link to={`/singleproduct/${product.id}`}>
+                      <h1>{product.productName}</h1>
+                    </Link>
+                    <p>
+                    Price: ${product.price/100}
+                    </p>
+                    <p>{product.description}</p>
+                    <img src={product.imageUrl}/>
+                  </div>
+                )
+              })
+            }
+          </div>
         </div>
       )
 }

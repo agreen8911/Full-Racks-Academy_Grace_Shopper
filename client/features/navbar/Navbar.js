@@ -2,6 +2,7 @@ import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { Link, useNavigate } from 'react-router-dom';
 import { logout } from '../../app/store';
+import { selectUser } from '../auth/authSlice';
 
 const Navbar = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
@@ -11,16 +12,18 @@ const Navbar = () => {
     dispatch(logout());
     navigate('/login');
   };
+  const user = useSelector(selectUser)
+  const isAdmin = user.me.isAdmin
 
 const userId = useSelector((state) => {
   return state.auth.me.id
 })
 
   return (
-    <div>
+    <div className='NBmain-Container'>
       <h1 className="NBheader">Full Racks Academy</h1>
       <nav>
-        {isLoggedIn ? (
+        {isLoggedIn && isAdmin ? (
           <div className='NBlinks'>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
@@ -28,8 +31,12 @@ const userId = useSelector((state) => {
               Logout
             </button>
             <Link to={`/cartdisplay/${userId}`}>Cart icon</Link>
+
             <Link to="/allProducts">All Products</Link>
             <Link to="/adminview">Admin</Link>
+            <button type="button" onClick={logoutAndRedirectHome}>
+              Logout
+            </button>
             {/* check to make sure it is /allproducts vs /products */}
           </div>
         ) : (
@@ -49,7 +56,6 @@ const userId = useSelector((state) => {
           </div>
         )}
       </nav>
-      <hr />
     </div>
   );
 };

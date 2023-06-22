@@ -2,6 +2,9 @@ const path = require('path')
 const express = require('express')
 const morgan = require('morgan')
 const app = express()
+// const {
+//   models: { User },
+// } = require('./db');
 module.exports = app
 
 // logging middleware
@@ -41,3 +44,7 @@ app.use((err, req, res, next) => {
   console.error(err.stack)
   res.status(err.status || 500).send(err.message || 'Internal server error.')
 })
+
+
+// module.exports = { requireToken, isAdmin }
+

@@ -13,7 +13,6 @@ router.get("/:id", async (req, res, next) => {
           
       }
           );
-          console.log("SINGLE PRODUCT", singleProductID);
           res.send(SingleProduct)
 
     if (!SingleProduct) {

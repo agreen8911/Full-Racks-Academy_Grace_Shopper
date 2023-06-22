@@ -15,7 +15,7 @@ const Home = (props) => {
       </div>
       
       <div className='HPuser-container'>
-        <h3>Welcome, {username}</h3>
+        <h3>Welcome {username}</h3>
       </div>
       <div className='HPequipmentTypes-section'>
         <div id='HPstrength-products'> 

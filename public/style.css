@@ -1,24 +1,28 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700;800&display=swap');
 
+.color1 {color: #ABBD95;}
+.color2 {color: #D6D1AB;}
+.color3 {color: #121D06;}
+.color4 {color: #787A75;}
+.color5 {color: #E5E5E5;}
+
 * {
   font-family: 'Open Sans', sans-serif;
+  color: #fff;
 }
 
 body {
   font-family: sans-serif;
-
-
-
+  background-color: #121D06
 }
+
 .bodyContainer {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-
   margin: 0;
   padding: 0;
   width: 100%;
-
 }
 
 a {
@@ -39,9 +43,17 @@ form div {
   display: inline-block;
 }
 
+input{
+  color: black;
+}
+
+li {
+  list-style-type: none;
+}
+
 
 .HPuser-container {
-  border: solid black 1px;
+  text-align: center ;
 }
 
 .HPequipmentTypes-section {
@@ -51,35 +63,71 @@ form div {
   align-items: center;
   text-align: center;
   background-image: url('https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fwallpapercave.com%2Fwp%2Fwp2639566.jpg&f=1&nofb=1&ipt=49e8a87bdfa8b7834a97ea703e8b3e087c7ea2177d0ea6c3077d548e72705f12&ipo=images');
-  background-size:100vw;
+  background-size: cover;
   background-repeat: no-repeat;
+
 }
 
 .HPequipmentTypes-section div {
   border: none;
   background-color: rgba(255, 255 , 255, 0.5);
-  width: 50%;
+  width: 90%; 
+  max-width: 500px; 
   font-size: 20px;
-  padding: 12px 15px;
+  padding: 2% 2.5%; 
   border-radius: 5px;
-  box-shadow: rbga(0, 0, 0, 0.15) 0 54px 55px,
-  rbga (0, 0, 0, 0.15) 0 -12px 30px,
-  rbga (0, 0, 0, 0.15) 0 4px 6px,
-  rbga (0, 0, 0, 0.15) 0 12px 3px,
-  rbga (0, 0, 0, 0.19) 0 -3px 5px;
-  margin: 2% 0 3% 0;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15), 0 4px 8px rgba(0, 0, 0, 0.15); 
+  margin: 2% 0; 
 }
 
+.HPequipmentTypes-section div  h1 {
+  color: #121D06;
+}
+
+@media (max-width: 768px) {
+  .HPequipmentTypes-section div {
+    width: 100%; 
+  }
+  .NBlinks {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .HPequipmentTypes-section div {
+    font-size: 18px;
+    padding: 2% 1.5%; 
+  }
+}
 
 /* Navbar Styling */
 
+.NBmain-Container {
+  background-color: #787A75;
+}
+
 .NBlinks {
   display: flex;
+  align-items: center;
   justify-content: space-between;
+  width: 90%;
+  margin-left: 5%;
+}
+
+.NBlinks button {
+  background-color: #121D06;
+  width: 10%;
+  height: 5%;
 }
 
 .NBheader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+
 }
 
 /* Footer Styling */
@@ -89,6 +137,8 @@ form div {
   bottom: 0;
   width: 100vw; */
   margin-top: auto;
+  background-color: #787A75;
+
 }
 
 .FTRlist  {
@@ -98,3 +148,204 @@ form div {
   justify-content: space-around;
 }
 
+/* Product Card Styling (All Product View & Categorical Views)*/
+
+.allProducts-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.productCard {
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  padding: 1em;
+  width: 20%;
+  margin: 2%;
+  flex-shrink: 0;
+}
+
+.allProducts-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.allProducts-main h1 {
+  color: #E5E5E5;
+}
+
+.productCard h1 {
+  color: #121D06;
+}
+
+.productCard p {
+  color: #121D06;
+}
+
+@media (max-width: 1200px) {
+  .allProducts-container {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+  }
+  .productCard {
+    width: 75%;
+  }
+}
+
+/* Login View */
+
+.login-shell{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5%;
+}
+
+.login-mainWrapper {
+  background-color:#E5E5E5;
+  width: 30vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 10px;
+
+}   
+
+.loginForm-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm-wrapper small {
+color: #121D06;
+}
+.loginForm-wrapper button {
+color: #121D06;
+}
+
+
+
+/* Single Product Wrapper */
+
+.SingleProduct{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.singleProductWrapper {
+  background-color: #E5E5E5;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  padding: 1em;
+  width: 30%;
+  margin: 2%;
+  flex-shrink: 0;
+}
+
+.singleProductWrapper h1 {
+  color:#121D06
+}
+.singleProductWrapper p {
+  color:#121D06
+}
+
+.singleProductWrapper img { 
+  max-width: 50%;
+  max-height: auto;
+  align-content: center;
+  justify-content: center;
+}
+
+.singleProductWrapper button {
+  background-color: #121D06;
+  color:#E5E5E5;
+  margin-top: 10%;
+  font-size: 20px;
+}
+
+/* Admin View */
+
+.mainAdmin-container{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.adminUsers-container{
+  width: 30%;
+  text-align: center;
+}
+
+.userContainer{
+  background-color: #D6D1AB;
+  display: flex ;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: .5em;
+  border-radius: 10px;
+  padding: 3%;
+}
+
+.userContainer h1{
+  color: #121D06
+}
+.userContainer button{
+  color: #121D06;
+  font-size: 15px;
+}
+
+.adminProducts-container{
+  width: 30%;
+  text-align: center; 
+}
+
+.adminButtonDiv{
+  display: flex;
+  flex-direction: row;
+  justify-content: center ;
+  width: 100% ;
+}
+
+.userDeleteBtn{
+  background-color: rgba(220, 20, 60, 0.26);
+  cursor: pointer;
+  margin-left: 1%;
+}
+
+.userEditBtn{
+  background-color: rgba(255, 217, 0, 0.245) ;
+  cursor: pointer;
+  margin-right: 1%;
+}
+
+.productEditBtn{
+  background-color: rgba(255, 217, 0, 0.245) ;
+  cursor:pointer
+}
+
+/* Edit User & Edit Product Styling */
+
+.login-mainWrapper h2 {
+  color: #121D06;
+
+}
+
+.loginForm-wrapper label {
+  color: #121D06;
+}

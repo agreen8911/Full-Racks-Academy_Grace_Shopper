@@ -30,41 +30,45 @@ const AllUsers = () => {
     const usersDiv =
         allUsers && allProducts ? (
             <div>
-                <h1 id="allUsersHeader">All Users</h1>
-                    <div>
-                    {
-                        allUsers.map((user) => {
-                            return(
-                                <div className="userContainer" key={user.id}>
-                                   
-                                    <Link className="individualUser" to={`/adminview/${user.id}`}>
-                                        <h1 >{`${user.firstName} ${user.lastName}`}</h1>
-                                    </Link>
-                                    <button className="userDeleteBtn" onClick={()=>{
-                                        dispatch(deleteUser(user.id))
-                                        fetchAllProductsAsync()
-                                    }}>X</button>
-                                    <button className="userEditBtn" onClick={()=>{
-                                        navigate(`/adminview/${user.id}`)
-                                    }}>Edit User</button>
-                                </div>
-                        )
-                        })
-                    }
-                    <div>
-                        <h1>All Products</h1>
+                <div className="mainAdmin-container">
+                    <div className="adminUsers-container">
+                        <h1>Edit Users</h1>
+                        {
+                            allUsers.map((user) => {
+                                return(
+                                    <div className="userContainer" key={user.id}>
+                                    
+                                        <Link className="individualUser" to={`/adminview/${user.id}`}>
+                                            <h1 >{`${user.firstName} ${user.lastName}`}</h1>
+                                        </Link>
+                                        <div className="adminButtonDiv">
+                                            <button className="userEditBtn" onClick={()=>{
+                                                navigate(`/adminview/${user.id}`)
+                                            }}>Edit User</button>
+                                            <button className="userDeleteBtn" onClick={()=>{
+                                                dispatch(deleteUser(user.id))
+                                                fetchAllProductsAsync()
+                                            }}>Delete User</button>
+                                        </div>
+                                    </div>
+                            )
+                            })
+                        }
+                    </div>    
+                    <div className="adminProducts-container">
+                        <h1>Edit Products</h1>
         
                             {
                                 allProducts.map((product) => {
                                 return (
-                                    <div key={product.id} >
-                                    <Link to={`/singleproduct/${product.id}`}>
-                                        <h1>{product.productName}</h1>
-                                    </Link>
-                                    <button className="productEditBtn" onClick={()=>{
-                                        navigate(`/adminviewproduct/${product.id}`)
-                                    }}>Edit or Delete Product</button>
-                                    </div>
+                                        <div className="userContainer" key={product.id} >
+                                        <Link to={`/singleproduct/${product.id}`}>
+                                            <h1>{product.productName}</h1>
+                                        </Link>
+                                        <button className="productEditBtn" onClick={()=>{
+                                            navigate(`/adminviewproduct/${product.id}`)
+                                        }}>Edit or Delete Product</button>
+                                        </div>                  
                                 )
                                 })
                             }
@@ -76,7 +80,7 @@ const AllUsers = () => {
         ); 
 
     return (
-        <div className='adminUserDiv'>
+        <div className='adminUser-mainDiv'>
             {usersDiv}
         </div>
     );

@@ -36,21 +36,19 @@ const SingleProduct = () => {
         singleProduct && singleProduct.id ? (
             <div className="singleProductWrapper">
                 <h1 className="singleViewNameHeader">
-          <p>
-            {singleProduct.productName}
-          </p>
+                <p>
+                  {singleProduct.productName}
+                </p>
           
-          <p>
-            {singleProduct.description}
-          </p>       
-          
-          Price: ${priceFunction( singleProduct.price )}
-          
-          
-          
+                <p>
+                  {singleProduct.description}
+                </p>       
+                Price: ${priceFunction( singleProduct.price )}
                 </h1>
               <img src={singleProduct.imageUrl} alt={singleProduct.productName} />
+            <div>
               <button onClick={() => handleAddToCart(singleProduct.id)}>Add to Cart </button>
+            </div>
             </div>
         ) : (
             <div>No SingleProduct</div>

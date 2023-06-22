@@ -13,6 +13,7 @@ import AdminView from '../features/adminView/AdminView';
 import EditUser from '../features/editUser/EditUser';
 import EditProduct from "../features/editProduct/EditProduct"
 import CartView from '../features/CartDisplay/Cartview';
+import { selectUser } from '../features/auth/authSlice';
 
 /**
  * COMPONENT
@@ -21,6 +22,8 @@ import CartView from '../features/CartDisplay/Cartview';
 
 const AppRoutes = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
+  const user = useSelector(selectUser)
+  const isAdmin = user.me.isAdmin
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -28,8 +31,9 @@ const AppRoutes = () => {
   }, []);
 
   return (
-    <div>
+    <div className='appRoutes-wrapper'>
       {isLoggedIn ? (
+        isAdmin ? (
         <Routes>
           <Route path="/*" element={<Home />} />
 
@@ -44,6 +48,17 @@ const AppRoutes = () => {
           <Route path="/adminviewproduct/:id" element={<EditProduct/> }/>
           <Route path="/cartdisplay/:userId" element={<CartView/>}/>          
         </Routes>
+        ) : (
+          <Routes>
+            <Route path="/*" element={<Home />} /> 
+            <Route path="/home" element={<Home />} />
+            <Route path="/singleproduct/:id" element={<SingleProduct />} /> {/* Add this line */}
+            <Route path="/strengthequipment" element={<AllStrength/>}/>
+            <Route path="/cardioequipment" element={<AllCardio/>}/>
+            <Route path="/recoveryequipment" element={<AllRecovery/>}/>
+            <Route path="/allProducts" element={<AllProducts/> }/>      
+          </Routes>
+        )
       ) : (
         <Routes>
           {/* <Route path="/*" element={<AuthForm name="login" displayName="Login" />} /> */}
@@ -59,10 +74,6 @@ const AppRoutes = () => {
           <Route path="/cartdisplay/" element={<CartView/>}/> 
         </Routes>
       ) 
-
-
-        
-      
       }
     </div>
   );

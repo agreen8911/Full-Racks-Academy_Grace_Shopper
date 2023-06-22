@@ -8,7 +8,6 @@ const Footer = () => {
   return (
     <div className="FTRcontainer">
         <div>
-            <h4>Footer</h4>
             <ul className="FTRlist">
                 <li>Adam Green</li>
                 <li>Alejando Armas</li>
