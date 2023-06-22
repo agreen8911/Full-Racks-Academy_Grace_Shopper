@@ -22,11 +22,6 @@ import CartView from '../features/CartDisplay/Cartview';
 const AppRoutes = () => {
   const isLoggedIn = useSelector((state) => !!state.auth.me.id);
   const dispatch = useDispatch();
-  // const isAdmin = useSelector((state) => {
-  //       return state.singleUser.singleUser;
-  //   });
-
-  // console.log('isAdmin', isAdmin)
 
   useEffect(() => {
     dispatch(me());
@@ -47,7 +42,7 @@ const AppRoutes = () => {
           <Route path="/adminview" element={<AdminView/> }/>
           <Route path="/adminview/:id" element={<EditUser/> }/>
           <Route path="/adminviewproduct/:id" element={<EditProduct/> }/>
-          <Route path="/cartdisplay" element={<CartView/>}/>          
+          <Route path="/cartdisplay/:userId" element={<CartView/>}/>          
         </Routes>
       ) : (
         <Routes>
@@ -61,8 +56,7 @@ const AppRoutes = () => {
           <Route path="/cardioequipment" element={<AllCardio/>}/>
           <Route path="/recoveryequipment" element={<AllRecovery/>}/>
           <Route path="/allProducts" element={<AllProducts/> }/>
-          <Route path="/cartdisplay" element={<CartView/>}/> 
-          
+          <Route path="/cartdisplay/" element={<CartView/>}/> 
         </Routes>
       ) 
 

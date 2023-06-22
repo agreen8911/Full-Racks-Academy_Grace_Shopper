@@ -12,6 +12,10 @@ const Navbar = () => {
     navigate('/login');
   };
 
+const userId = useSelector((state) => {
+  return state.auth.me.id
+})
+
   return (
     <div>
       <h1 className="NBheader">Full Racks Academy</h1>
@@ -23,7 +27,7 @@ const Navbar = () => {
             <button type="button" onClick={logoutAndRedirectHome}>
               Logout
             </button>
-            <Link to="/cartdisplay">Cart icon</Link>
+            <Link to={`/cartdisplay/${userId}`}>Cart icon</Link>
             <Link to="/allProducts">All Products</Link>
             <Link to="/adminview">Admin</Link>
             {/* check to make sure it is /allproducts vs /products */}

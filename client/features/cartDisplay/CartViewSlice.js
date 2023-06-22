@@ -3,14 +3,12 @@ import axios from "axios";
 
 // const initialState = [];
 
-
-
-
 export const fetchAllCartView = createAsyncThunk(
     "cartDisplay/fetchAllCartView", async (userId) => {
         console.log('THIS IS THUNK');
         try{
             const { data } = await axios.get( `/api/cartdisplay/${userId}`)
+            console.log('this is data2', data)
             return data
         } catch (err) {
             console.log(err)
@@ -18,17 +16,6 @@ export const fetchAllCartView = createAsyncThunk(
     }
 )
 
-// export const fetchAllCartView = createAsyncThunk(
-//     "cartDisplay/fetchAllCartView", async (cartId) => {
-//         try{
-//             const { data } = await axios.get( `/api/cartdisplay/${cartId}`)
-//             console.log("THIS IS DATA", data);
-//             return data
-//         } catch (err) {
-//             console.log(err)
-//         }
-//     }
-// )
 
 const allCartviewSlice = createSlice({
     name: "cartDisplay",
@@ -49,7 +36,7 @@ const allCartviewSlice = createSlice({
 } )
 
 export const selectCart = ( state ) =>  {
-    return state.cartDisplay.cartList;
+    return state.cartList;
 }
 
 export default allCartviewSlice.reducer;

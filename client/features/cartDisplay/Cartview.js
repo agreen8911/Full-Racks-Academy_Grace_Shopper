@@ -3,15 +3,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { fetchAllCartView, selectCart } from "./CartViewSlice";
 import { selectUser } from "../auth/authSlice";
+
+
+
+
+
 const CartView = () => {
     const dispatch = useDispatch();
-    // const cartDisplay = useSelector( selectCart );
-    // console.log("THIS IS cartdisplay", cartDisplay);
     const user = useSelector( selectUser );
     const cartDisplay = useSelector( ( state ) => {
-        
         console.log("THIS IS CART DISPLAY", state.cartDisplay);
-        return state.cartList;
+        return state.cartDisplay;
     })
 
     useEffect( () => {
@@ -23,41 +25,58 @@ const CartView = () => {
     },[dispatch])
 
     return (
-       
-        
-        <div id="mainCartViewDiv">
-                <h1>Check out</h1>
-                <h1 id="allCartViewHeader">Cart</h1>
+        <div>
+          {cartDisplay.cartList.map((cartItem) => (
+            <div key={cartItem.id}>
+              <div>
+                {cartItem.cart_products.map((product) => (
+                  <div key={product.createdAt}>
+                    <div key={product.productId}>Product ID:{product.productId}</div>
+                    <div key={product.unitPrice}>Unit Price:{product.unitPrice}</div>
+                    <div key={product.quantity}>Quantity:{product.quantity}</div> 
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
 
-                {cartDisplay ? cartDisplay.map( ( cartItem ) => {
-                    console.log("THIS IS CART ITEM", cartItem);
-                    return (
-                        <div key={cartItem.id}>
-                            <h1>{cartItem.productName}</h1>  
-                    </div>
-                    )
-                } ):"noCartItems" }
-                   
-                    
+          {
 
-                
-            
-                {/* {
-                    cartView.map((allProducts) => {
-                        return(
-                                <div className="cartViewContainer" key={allProducts.id}>
-                                    <Link className="cartList" to={`/singleproduct/${allProducts.id}`}>
-                                        <h1 >{`${equipment.productName}`}</h1>
-                                    </Link>
-                                </div>
-                        )
-                    })
-                } */}
-
+          }  
         </div>
+      );
+
+    // return (
+    //     <div id="mainCartViewDiv">
+    //             <h1>Check out</h1>
+    //             <h1 id="allCartViewHeader">Cart</h1>
+                
+    //             {/* {
+    //                 cartDisplay.cartList.map( ( cartItem ) => {
+    //                     console.log('cartt', cartItem)
+    //                     {cartItem.cart_products.map((product) => {
+    //                         console.log('this is product!', product.unitPrice)
+    //                         return (
+    //                             <div className="cart-view">
+    //                                 <p>
+    //                                 {product.unitPrice}
+    //                                 </p>
+    //                                 <p>
+    //                                     Hi!
+    //                                 </p>
+
+    //                             </div>
+    //                         )
+    //                         })
+    //                     }
+    //                 })
+    //             } */}
+             
+    //     </div>
+                  
                         
       
-    )
+    // )
 }
 
 export default CartView;
