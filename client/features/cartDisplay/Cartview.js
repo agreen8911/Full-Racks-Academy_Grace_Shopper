@@ -1,11 +1,8 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { fetchAllCartView, selectCart } from "./CartViewSlice";
 import { selectUser } from "../auth/authSlice";
-
-
-
 
 
 const CartView = () => {
@@ -15,6 +12,7 @@ const CartView = () => {
         console.log("THIS IS CART DISPLAY", state.cartDisplay);
         return state.cartDisplay;
     })
+    const navigate = useNavigate()
 
     useEffect( () => {
         console.log( 'THIS IS USER', user );
@@ -24,59 +22,53 @@ const CartView = () => {
         }
     },[dispatch])
 
+  const handlePlaceOrder = () =>{
+    window.confirm("Order Placed!")
+    navigate("/home")
+  }
+
+  function convertToDollars(price) {
+    const dollars = price/100;
+    return dollars;
+  }
+
+  function findTotal(quantity, unitPrice){
+    const total = quantity * convertToDollars(unitPrice)
+    return `$${total}`;
+  }
+
     return (
-        <div>
+        <div className="primaryCartWrapper">
+          <h1>Checkout Summary</h1>
           {cartDisplay.cartList.map((cartItem) => (
-            <div key={cartItem.id}>
-              <div>
-                {cartItem.cart_products.map((product) => (
-                  <div key={product.createdAt}>
-                    <div key={product.productId}>Product ID:{product.productId}</div>
-                    <div key={product.unitPrice}>Unit Price:{product.unitPrice}</div>
-                    <div key={product.quantity}>Quantity:{product.quantity}</div> 
-                  </div>
-                ))}
+            <div className="cartItem-wrapper" key={cartItem.id}>
+            <div className="cartProduct-Wrapper">
+              <table className="cartProduct-table">
+                  <thead>
+                    <tr>
+                      <th>Product ID</th>
+                      <th>Quantity</th>
+                      <th>Total Price</th>
+                    </tr>
+                  </thead>
+
+                  <tbody>
+                    {cartItem.cart_products.map((product) => (
+                      <tr key={product.createdAt}>
+                        <td>{product.productId}</td>
+                        <td>{product.quantity}</td>
+                        <td>Price: {findTotal(product.quantity, product.unitPrice)}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
               </div>
+              <button onClick={() => handlePlaceOrder()}>Checkout!</button>
             </div>
           ))}
-
-          {
-
-          }  
         </div>
       );
 
-    // return (
-    //     <div id="mainCartViewDiv">
-    //             <h1>Check out</h1>
-    //             <h1 id="allCartViewHeader">Cart</h1>
-                
-    //             {/* {
-    //                 cartDisplay.cartList.map( ( cartItem ) => {
-    //                     console.log('cartt', cartItem)
-    //                     {cartItem.cart_products.map((product) => {
-    //                         console.log('this is product!', product.unitPrice)
-    //                         return (
-    //                             <div className="cart-view">
-    //                                 <p>
-    //                                 {product.unitPrice}
-    //                                 </p>
-    //                                 <p>
-    //                                     Hi!
-    //                                 </p>
-
-    //                             </div>
-    //                         )
-    //                         })
-    //                     }
-    //                 })
-    //             } */}
-             
-    //     </div>
-                  
-                        
-      
-    // )
 }
 
 export default CartView;
