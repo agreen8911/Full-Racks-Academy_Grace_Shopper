@@ -23,14 +23,12 @@ const userId = useSelector((state) => {
     <div className='NBmain-Container'>
       <h1 className="NBheader">Full Racks Academy</h1>
       <nav>
-        {isLoggedIn && isAdmin ? (
+        {isLoggedIn ? (
+              isAdmin ? (
           <div className='NBlinks'>
             {/* The navbar will show these links after you log in */}
             <Link to="/home">Home</Link>
-            <button type="button" onClick={logoutAndRedirectHome}>
-              Logout
-            </button>
-            <Link to={`/cartdisplay/${userId}`}>Cart icon</Link>
+            <Link to={`/cartdisplay/${userId}`}>Cart/Checkout</Link>
 
             <Link to="/allProducts">All Products</Link>
             <Link to="/adminview">Admin</Link>
@@ -39,6 +37,20 @@ const userId = useSelector((state) => {
             </button>
             {/* check to make sure it is /allproducts vs /products */}
           </div>
+              ) : (
+                <div className='NBlinks'>
+                    {/* The navbar will show these links after you log in */}
+                    <Link to="/home">Home</Link>
+                    <Link to={`/cartdisplay/${userId}`}>Cart/Checkout</Link>
+        
+                    <Link to="/allProducts">All Products</Link>
+                    {/* <Link to="/adminview">Admin</Link> */}
+                    <button type="button" onClick={logoutAndRedirectHome}>
+                      Logout
+                    </button>
+                    {/* check to make sure it is /allproducts vs /products */}
+              </div>
+              )
         ) : (
           <div className="NBlinks">
             <div className="NBlinksLeft">
@@ -50,7 +62,7 @@ const userId = useSelector((state) => {
               <Link to="/login">Login</Link>
               <Link to="/signup">Sign Up</Link>
               {/* So do we want to have log in and sign up separate? or do we make the log in page also have the signup option? */}
-              <Link to="/cartdisplay">Cart(image or icon)</Link>
+              <Link to="/cartdisplay">Cart/Checkout</Link>
               {/* Do we want a user who is not logged in to even be able to see the cart option? i put the route as going to signup to force them into an account lol */}
             </div>
           </div>

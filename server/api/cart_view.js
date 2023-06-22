@@ -19,22 +19,14 @@ router.get( "/:id", async ( req, res, next ) => {
     }
 });
 
-
-
-
-
-
-// router.get( "/:id", async ( req, res, next ) => {
-//     try {
-        
-//         const userId = req.params.id;
-//         const cartDisplay = await Cart.findAll({
-//             where: { userId: userId},
-//             include: [Cart_Products]
-//         } );
-//     res.send(cartDisplay);
-//     } catch ( err ) {
-       
-//     next(err);
-//   }
+// router.put("/:id", async (req, res, next) => {
+// 	try {
+// 		const user = await Cart.findOne({
+// 			where: { userId: req.params.id },
+// 		});
+// 		res.send(await user.update(req.body));
+// 	} catch (error) {
+// 		next(error);
+// 	}
 // });
+

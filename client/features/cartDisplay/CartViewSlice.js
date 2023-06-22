@@ -16,6 +16,24 @@ export const fetchAllCartView = createAsyncThunk(
     }
 )
 
+// export const updateCart = createAsyncThunk(
+//     "updateCart",
+//     async ({ userId }) => {
+//         console.log('THIS IS updateCartThunk');
+//         console.log('userId inside thunk', userId)
+//         try {
+//             const response = await axios.put(`/api/cartdisplay/${userId}`, {
+//                 // status: "fulfilled" // Update the "status" value to "fulfilled"
+//             });
+//             console.log('this is response!', response);
+//             return response.data;
+//         } catch (err) {
+//             console.log(err);
+//         }
+//     }
+// );
+
+
 
 const allCartviewSlice = createSlice({
     name: "cartDisplay",
@@ -32,6 +50,10 @@ const allCartviewSlice = createSlice({
         builder.addCase(fetchAllCartView.rejected, (state, action)=> {
             console.log("Rejected")
         })
+        // builder.addCase(updateCart.fulfilled, (state, action) => {
+        //     console.log("THIS IS action.payload update", action.payload);
+        //     state.cartList = action.payload;
+        // })
     }
 } )
 
