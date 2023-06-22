@@ -1,28 +1,33 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link, useNavigate } from "react-router-dom";
-import { fetchAllCartView, selectCart } from "./CartViewSlice";
+import { useNavigate } from "react-router-dom";
+import { fetchAllCartView, selectCart, updateCart } from "./CartViewSlice";
 import { selectUser } from "../auth/authSlice";
-
 
 const CartView = () => {
     const dispatch = useDispatch();
     const user = useSelector( selectUser );
     const cartDisplay = useSelector( ( state ) => {
-        console.log("THIS IS CART DISPLAY", state.cartDisplay);
+        // console.log("THIS IS CART DISPLAY", state.cartDisplay);
         return state.cartDisplay;
     })
     const navigate = useNavigate()
+
 
     useEffect( () => {
         console.log( 'THIS IS USER', user );
         if ( user.me.id ) {
             dispatch(fetchAllCartView(user.me.id))
-            
         }
     },[dispatch])
 
   const handlePlaceOrder = () =>{
+    console.log('THIs is user inside place order', user.me.id)
+    // dispatch(
+		// 	updateCart(user.me.id)
+		// )
+    // console.log('THIs is updateCart', updateCart(user.me.id))
+
     window.confirm("Order Placed!")
     navigate("/home")
   }

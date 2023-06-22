@@ -1,10 +1,8 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useParams } from 'react-router-dom';
-
+import { useParams, useNavigate } from 'react-router-dom';
 import { fetchSingleProduct, selectSingleProduct, fetchCart, addToCartProducts } from './SingleProductSlice';
 import { selectUser } from '../auth/authSlice';
-
 
 
 const SingleProduct = () => {
@@ -12,6 +10,8 @@ const SingleProduct = () => {
   const dispatch = useDispatch();
   const singleProduct = useSelector( selectSingleProduct );
   const user = useSelector(selectUser)
+
+  const navigate = useNavigate()
  
   const priceFunction = () => {
     return singleProduct.price / 100
@@ -24,7 +24,10 @@ const SingleProduct = () => {
     if(!user.me.id) return "not logged in"
     dispatch(fetchCart(user.me.id)).then((res)=>{
       const cartId = res.payload.id;
+      // console.log('this is .payload', cartId)
       dispatch(addToCartProducts({cartId, productId, quantity: 1, unitPrice: singleProduct.price}))
+      window.alert("Item has been added to cart!")
+      navigate("/allproducts")
     } )
   }
 
