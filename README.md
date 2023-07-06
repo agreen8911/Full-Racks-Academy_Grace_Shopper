@@ -20,7 +20,7 @@ http://wallpapr.herokuapp.com/
 
 1.  `git clone` && `cd` into the project directory
 1.  `npm install` to install project dependencies
-1.  `createdb wallpaper` && `createdb wallpaper-test` to make a Postgres database
+1.  `createdb graceshopper` && `createdb graceshopper-test` to make a Postgres database
 1.  `npm run seed` to seed the database with data
 1.  Running `npm run start-dev` will make great things happen!
 1.  Open up `localhost:8080` in your favorite browser
