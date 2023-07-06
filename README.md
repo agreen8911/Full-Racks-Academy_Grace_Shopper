@@ -1,18 +1,9 @@
 # Wallpaper
 
-| Table of Contents                                                                                          |
-| ---------------------------------------------------------------------------------------------------------- |
-| Project Management                                                                                         |
-| [Repo](https://github.com/agreen8911/Full-Racks-Academy_Grace_Shopper/tree/main) |
-| [Team](https://github.com/orgs/GraceShopper-Avacardio/people) |
-| Project Architecture                                                                                       |
-| [Architecture](https://github.com/2011-FSA-Alpha/GraceShopper/wiki/Project-Architecture)                   |
-| [DB Schema](https://dbdiagram.io/d/5ffdd60b80d742080a3606c2)                                               |
-| [Wireframes](https://www.figma.com/file/OaM113RKVYajEhSjtietB7/Wallpapr?node-id=0%3A1)                     |
-| Standards                                                                                                  |
-| [Naming Conventions](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#naming-conventions)               |
-                |
+# About
 
+Grace Shopper is a e-commerce website project designed to test developers' coding abilities and team-based skills that they've learned througout the Full Stack Academy program.  Our team decided to create an e-commerce website that sells gym equipment, complete with cart/checkout functionality, user signup/login, and administrator features.  On the front-end we used React and Redux and used Node.js and express on our backend with a PostgreSQL database.   
+                
 # Contributors
 
 [Adam Green](https://www.linkedin.com/in/agreen01/) | [Alejandro Armas](https://www.linkedin.com/in/alejandroarmas66/) | [Dakota Jennings](https://www.linkedin.com/in/dakotamjennings/) | [Daniel Rodriguez](https://www.linkedin.com/in/daniel-a-rodriguez-/) | 
