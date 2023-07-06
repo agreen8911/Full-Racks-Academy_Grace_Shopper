@@ -3,21 +3,15 @@
 | Table of Contents                                                                                          |
 | ---------------------------------------------------------------------------------------------------------- |
 | Project Management                                                                                         |
-| [Repo](https://github.com/2011-FSA-Alpha/GraceShopper)                                                     |
-| [Team](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#team)                                           |
+| [Repo] (https://github.com/agreen8911/Full-Racks-Academy_Grace_Shopper/tree/main) |
+| [Team] (https://github.com/2011-FSA-Alpha/GraceShopper/wiki#team](https://github.com/orgs/GraceShopper-Avacardio/people) |
 | Project Architecture                                                                                       |
 | [Architecture](https://github.com/2011-FSA-Alpha/GraceShopper/wiki/Project-Architecture)                   |
 | [DB Schema](https://dbdiagram.io/d/5ffdd60b80d742080a3606c2)                                               |
 | [Wireframes](https://www.figma.com/file/OaM113RKVYajEhSjtietB7/Wallpapr?node-id=0%3A1)                     |
 | Standards                                                                                                  |
 | [Naming Conventions](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#naming-conventions)               |
-| [Commit Convention](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#commit-messages)                   |
-| [Testing Style](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#testing-style)                         |
-| Workflows                                                                                                  |
-| [Pre-Pull Request Workflow](https://github.com/2011-FSA-Alpha/GraceShopper/wiki#pre-pull-request-workflow) |
-| [Resolving Merge Conflicts](https://github.com/2011-FSA-Alpha/GraceShopper/wiki/Resolving-Merge-Conflicts) |
-| Documentation                                                                                              |
-| [NPM Packages](https://github.com/2011-FSA-Alpha/GraceShopper/wiki/Package-Documentation)                  |
+                |
 
 # Contributors
 
