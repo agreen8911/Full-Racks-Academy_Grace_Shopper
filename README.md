@@ -55,48 +55,12 @@ If you want to run the server and/or `webpack` separately, you can also
 
 [View on Figma](https://www.figma.com/file/OaM113RKVYajEhSjtietB7/Wallpapr?node-id=0%3A1)
 
-# Standardization
-
-## Naming Conventions:
+# Project Naming Conventions:
 
 * Components: PascalCase // eg. `AllProducts.js`
 * Reducers: camelCase // eg. `myStore.js`
 * Tests: type.spec.js // eg. `AllProducts.test.js`, `myStore.test.js`
 
-## Commit Messages:
 
-* Semantic style — http://karma-runner.github.io/4.0/dev/git-commit-msg.html
-* eg. `feat(add User model to database)`
-* what is being added(summary of what it does) - more details if needed.
 
-## Testing Style:
 
-* Framework: Mocha
-* Assertions: Chai
-* Front-end: Enzyme
-* Back-end: Supertest
-
-Please write tests with the `expect` style in Chai
-https://www.chaijs.com/guide/styles/#expect
-
-## Run a single test file:
-
-`npx mocha ./client/components/OrderConfirmed.spec.js --require @babel/polyfill --require @babel/register -w`
-
-## Pre-Pull Request Workflow
-
-* From current feature branch
-
-1.  `git stash`
-2.  `git pull origin master`
-3.  `git stash apply`
-4.  `git add <new feature>`
-5.  `git commit -m <commit message>`
-6.  `git push`
-
-# Acknowledgements
-
-[google-apis]: https://console.developers.google.com/apis/credentials
-* Thank you to [Fullstack Academy](https://www.fullstackacademy.com/) for bringing this team together to build _Wallpaper_
-* Huge thanks to the team for hustling to build this project
-* All photos courtesy [Ricky Rhodes](https://www.rickyrhodes.com)
