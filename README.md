@@ -3,6 +3,8 @@
 ## About
 
 Grace Shopper is a e-commerce website project designed to test developers' coding abilities and team-based skills that they've learned througout the Full Stack Academy program.  Our team decided to create an e-commerce website that sells gym equipment, complete with cart/checkout functionality, user signup/login, and administrator features.  On the front-end we used React and Redux and used Node.js and express on our backend with a PostgreSQL database.   
+
+In this project, I led the development and creation of the site administrator and product category (i.e. sorted types of equipment) views and functionality. In all of these website views/functionalities, my task was to design and build the database models, create RESTful APIs, and build the React (with Redux state management) components.  Additionally, I led the implementation of administrator permissions (i.e. isAdmin ? ) and ensuring proper permissions checks on both the front-end, as well as the back-end to ensure optimal security.  
                 
 ## Contributors
 
