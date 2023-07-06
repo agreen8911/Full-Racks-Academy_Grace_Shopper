@@ -1,10 +1,10 @@
-Full Racks Academy (Full Stack Academy (FSA) Grace Shopper e-Commerce Website Project)
+# Full Racks Academy e-Commerce Site Project 
 
-# About
+## About
 
 Grace Shopper is a e-commerce website project designed to test developers' coding abilities and team-based skills that they've learned througout the Full Stack Academy program.  Our team decided to create an e-commerce website that sells gym equipment, complete with cart/checkout functionality, user signup/login, and administrator features.  On the front-end we used React and Redux and used Node.js and express on our backend with a PostgreSQL database.   
                 
-# Contributors
+## Contributors
 
 [Adam Green](https://www.linkedin.com/in/agreen01/) | [Alejandro Armas](https://www.linkedin.com/in/alejandroarmas66/) | [Dakota Jennings](https://www.linkedin.com/in/dakotamjennings/) | [Daniel Rodriguez](https://www.linkedin.com/in/daniel-a-rodriguez-/) | 
 | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :----------------------------------------------------------------------------------------------------------------------------------------------------------------: | :-------------------------------------------------------------------------------------------------------------------------------------------------------------: |
