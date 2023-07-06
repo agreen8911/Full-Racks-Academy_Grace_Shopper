@@ -28,7 +28,7 @@ If you want to run the server and/or `webpack` separately, you can also
 
 [View To-do Board](https://github.com/orgs/GraceShopper-Avacardio/projects/1)
 
-# Database Schema & Wireframes
+## Database Schema & Wireframes
 [View on Excalidraw](https://excalidraw.com/#json=eQpoVpFX-iY8PwFgMBXwo,aXWMoqxSdwOFayVcC-2DYA)
 
 ## Project Naming Conventions:
