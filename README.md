@@ -4,7 +4,7 @@
 | ---------------------------------------------------------------------------------------------------------- |
 | Project Management                                                                                         |
 | [Repo] (https://github.com/agreen8911/Full-Racks-Academy_Grace_Shopper/tree/main) |
-| [Team] (https://github.com/2011-FSA-Alpha/GraceShopper/wiki#team](https://github.com/orgs/GraceShopper-Avacardio/people) |
+| [Team] (https://github.com/orgs/GraceShopper-Avacardio/people) |
 | Project Architecture                                                                                       |
 | [Architecture](https://github.com/2011-FSA-Alpha/GraceShopper/wiki/Project-Architecture)                   |
 | [DB Schema](https://dbdiagram.io/d/5ffdd60b80d742080a3606c2)                                               |
